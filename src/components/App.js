@@ -13,7 +13,7 @@ function App() {
   return (
     <Container>
       <div>
-        {/* <Router>
+        <Router>
           <AuthProvider>
             <Switch>
               <PrivateRoute exact path="/" component={Dashboard} />
@@ -23,7 +23,7 @@ function App() {
               <Route path="/forgot-password" component={ForgotPassword} />
             </Switch>
           </AuthProvider>
-        </Router> */}
+        </Router>
         hi
       </div>
     </Container>
