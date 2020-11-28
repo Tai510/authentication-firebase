@@ -24,7 +24,6 @@ function App() {
             </Switch>
           </AuthProvider>
         </Router>
-        hi
       </div>
     </Container>
   );
