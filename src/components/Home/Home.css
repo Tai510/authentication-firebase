@@ -1,0 +1,212 @@
+.Home {
+  display: flex;
+  justify-content: space-between;
+  background-image: url("https://i.pinimg.com/originals/de/1d/df/de1ddf9ee30e08e15460626b919ef87e.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 730px;
+}
+
+.right-section-home {
+  margin-right: 30px;
+  width: 212px;
+  height: 500px;
+  margin-top: 30px;
+}
+
+.second-row-home {
+  display: flex;
+}
+
+.third-row-home {
+  display: flex;
+}
+
+.food-home {
+  background: #e72011;
+  border: 1px solid #fff;
+  width: 100px;
+  height: 100px;
+  color: #fff;
+  font-size: 50px;
+  padding-left: 22px;
+}
+
+.food-home:hover {
+  background: white;
+  color: #e72011;
+}
+
+.mail-home {
+  background: hsl(164deg 54% 55%);
+  border: 1px solid #fff;
+  margin-left: 10px;
+  color: #fff;
+  font-size: 50px;
+  padding-left: 22px;
+  padding-top: 5px;
+  width: 100px;
+  height: 100px;
+}
+
+.mail-home:hover {
+  background: white;
+}
+
+.social-1,
+.social-2 {
+  display: flex;
+  justify-content: space-between;
+}
+
+.mail-home,
+.social-boxes {
+  width: 100px;
+  height: 100px;
+}
+
+.Facebook {
+  background: #fff;
+  width: 48px;
+  height: 48px;
+  margin-top: 5px;
+  border: 1px solid #fff;
+  padding-left: 10px;
+}
+
+.Facebook:hover {
+  background: #3b5998;
+  color: white;
+}
+
+#Facebook {
+  font-size: 25px;
+  color: #3b5998;
+}
+
+.Amazon {
+  background: #f90;
+  width: 48px;
+  height: 48px;
+  margin-top: 5px;
+  border: 1px solid #fff;
+  padding-left: 10px;
+}
+
+.Amazon:hover {
+  background: #000;
+  color: #f90;
+}
+
+#Amazon {
+  font-size: 25px;
+  color: #000;
+}
+
+.Netflix {
+  background: #e50914;
+  width: 48px;
+  height: 48px;
+  margin-top: 4px;
+  border: 1px solid #fff;
+  padding-left: 10px;
+}
+
+.Netflix:hover {
+  background: white;
+  color: #e50914;
+}
+
+#Netflix {
+  color: #fff !important;
+  font-size: 25px;
+}
+
+.Youtube {
+  background: #fff;
+  width: 48px;
+  height: 48px;
+  margin-top: 4px;
+  border: 1px solid #fff;
+  padding-left: 10px;
+}
+
+.Youtube:hover {
+  background: #c4302b;
+  color: white;
+}
+
+#Youtube {
+  font-size: 25px;
+  color: #c4302b;
+}
+
+.Stocks {
+  border: 1px solid #fff;
+  width: 100px;
+  height: 100px;
+  color: #fff;
+  font-size: 50px;
+  padding-left: 22px;
+}
+
+.Stocks:hover {
+  background: white;
+  color: cadetblue;
+}
+
+#Stocks {
+  font-size: 25px;
+  color: white;
+}
+
+.stocks {
+  width: 100px;
+  height: 100px;
+  margin-top: 5px;
+  margin-left: 10px;
+  border: 1px solid #fff;
+  background: cadetblue;
+  cursor: pointer;
+}
+
+.profile-div {
+  border: 1px solid white;
+  margin-top: 30px;
+  margin-left: 30px;
+  text-align: center;
+  background: white;
+}
+
+.profile-info {
+  background: #de554b;
+  margin: 20px 5px;
+  color: white;
+  font-family: "Work Sans", sans-serif;
+  font-weight: bolder;
+}
+
+.profile-info label {
+  margin-top: 13px;
+  font-size: 22px;
+  font-weight: bolder;
+  text-shadow: 1px 1px grey;
+}
+
+.profile-info p {
+  margin-bottom: 5px;
+  font-weight: bolder;
+  text-shadow: 1px 1px grey;
+}
+
+#update-button {
+  width: 135px !important;
+  height: 37px;
+  background: #bfbf26;
+  color: #4c3838;
+  margin-bottom: 19px;
+  margin-top: 5px !important;
+  outline: none;
+  border: 1px solid white;
+  font-weight: bolder;
+}

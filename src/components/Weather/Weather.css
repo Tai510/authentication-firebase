@@ -1,0 +1,30 @@
+.weather-div {
+  border: 1px solid #fff;
+  text-align: center;
+  color: #cbccc5;
+  text-shadow: 1px 1px #3f3f3e;
+  height: 260px;
+  width: 210px;
+  margin-bottom: 5px;
+  font-family: Barlow Condensed, sans-serif;
+  background-image: url(https://images.unsplash.com/photo-1558138818-d44c4dea7a6a?auto=format&fit=crop&ixid=eyJhcHBfaWQiOjEyMDd9&ixlib=rb-1.2.1&q=60&w=800);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.weather-div h3 {
+  font-size: 40px;
+  margin-top: 20px;
+  font-weight: bolder;
+}
+
+.temp h4 {
+  font-size: 80px;
+  padding-top: 10px;
+  font-weight: bolder;
+}
+
+.weather-div h5 {
+  font-size: 30px;
+  font-weight: bolder;
+}
