@@ -45,7 +45,7 @@ const Weather = () => {
     // Values for the App
     const temperature = data.current.temperature;
     setTemperatures(temperature);
-    const fahrenheit = Math.floor((temperature * 9) / 5 + 32);
+    const fahrenheit = Math.floor((temperature * 9) / 5 + 32 + 26);
     setFahrenheits(fahrenheit);
     const location = data.location.name;
     setLocations(location);
