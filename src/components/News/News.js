@@ -13,7 +13,7 @@ const News = () => {
   const [random, setRandom] = useState();
 
   useEffect(() => {
-    getNews();
+    // getNews();
   }, []);
 
   const getNews = async () => {

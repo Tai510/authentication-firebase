@@ -18,9 +18,9 @@ const Weather = () => {
 
   const API_KEY = "cf3faa22250a94532c402637c18e357f";
 
-  // useEffect(() => {
-  //     getWeather();
-  // }, [query])
+  useEffect(() => {
+      getWeather();
+  }, [query])
 
   const getSearch = (e) => {
     e.preventDefault();
@@ -59,13 +59,13 @@ const Weather = () => {
   return (
     <div>
       <div className="weather-div">
-        <h3>{locations}Sonoma</h3>
+        <h3>{locations}</h3>
         <div className="temp">
           <h4 className="fahrenheit">
-            {fahrenheits}80 <span>°F</span>
+            {fahrenheits}<span>°F</span>
           </h4>
         </div>
-        <h5>{descriptions}Sunny</h5>
+        <h5>{descriptions}</h5>
       </div>
     </div>
   );
