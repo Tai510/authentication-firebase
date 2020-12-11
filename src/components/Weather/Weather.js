@@ -16,7 +16,7 @@ const Weather = () => {
   const [regions, setRegions] = useState([]);
   const [countries, setCountries] = useState([]);
 
-  const API_KEY = "36ed3dfc4ff24137f47a06fffebaa187";
+
 
   useEffect(() => {
       getWeather();
@@ -31,12 +31,12 @@ const Weather = () => {
   const updateSearch = (e) => {
     e.preventDefault();
     setSearch(e.target.value);
-    console.log("search value :", search);
+    // console.log("search value :", search);
   };
 
   const getWeather = async () => {
     const response = await fetch(
-      `https://cors-anywhere.herokuapp.com/http://api.weatherstack.com/current?access_key=${API_KEY}&query=${query}`
+      process.env.REACT_APP_WEATHER_URL
     );
     const data = await response.json();
     setInfo(data);
@@ -62,10 +62,10 @@ const Weather = () => {
         <h3>{locations}</h3>
         <div className="temp">
           <h4 className="fahrenheit">
-            {fahrenheits}<span>°F</span>
+            {fahrenheits}81<span>°F</span>
           </h4>
         </div>
-        <h5>{descriptions}</h5>
+        <h5>{descriptions}Clear</h5>
       </div>
     </div>
   );

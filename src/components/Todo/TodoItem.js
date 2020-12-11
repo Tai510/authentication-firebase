@@ -1,14 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
 
-const TodoItem = ({ id, complete, item, lineThrough, removeItem }) => {
+const TodoItem = ({ complete, item, lineThrough, removeItem }) => {
   return (
     <div className="items">
-      <div className={`list ${complete}`} onClick={() => lineThrough(id)}>
+      <div className={`list ${complete}`} onClick={() => lineThrough()}>
         <p>{item}</p>
       </div>
       <button id="delete-button">
-        <i onClick={() => removeItem(id)} class="fas fa-times"></i>{" "}
-        {/* <i onClick={() => editItem(id)} class="fas fa-pencil-alt"></i> */}
+        <i onClick={() => removeItem()} class="fas fa-times"></i>{" "}
       </button>
     </div>
   );

@@ -1,59 +1,37 @@
 import React, { useState, useEffect } from "react";
-import { Card, Button, Alert } from "react-bootstrap";
 import { useAuth } from "../contexts/AuthContext";
-import { Link, useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import NavBar from "./Nav/NavBar";
-import Calendar from "react-calendar";
 import Home from "./Home/Home";
 import Todo from "./Todo/Todo";
-import axios from "axios";
-import Planner from "./Planner";
 import { db } from "../firebase";
+import firebase from "firebase/app";
 
 export default function Dashboard() {
   const [error, setError] = useState("");
   const { currentUser, logout } = useAuth();
   const history = useHistory();
   const [todos, setTodos] = useState([]);
-  const [todo, setTodo] = useState("");
-  const [notify, setNotify] = useState(0);
+  const [item, setItem] = useState("");
+  const [notify, setNotify] = useState();
 
   useEffect(() => {
-    // axios
-    //   .get("http://localhost:4000/todos")
-    //   .then((res) => {
-    //     setTodos(res.data);
-    //     setNotify(todos.length);
-    //   })
-    //   .catch((err) => {
-    //     console.log(err);
-    //   });
-    db.collection('planner').get().then((snapshot) => {
-        snapshot.docs.forEach(doc => {
-          console.log('SnapShot :', doc.data())
-        })
-    })
-  }, [todo, notify]);
+    db.collection("planner")
+      .orderBy("timestamp", "asc")
+      .onSnapshot((snapshot) => {
+        setTodos(
+          snapshot.docs.map((doc) => ({ id: doc.id, item: doc.data().item }))
+        );
+        console.log("Todos Id ...", todos);
+        setNotify(parseInt(todos.length));
+      });
+  }, [item, notify]);
 
   const addItem = (item) => {
-    // axios
-    //   .post("http://localhost:4000/todos", {
-    //     item,
-    //     id: Date.now(),
-    //     complete: false,
-    //   })
-    //   .then((res) => {
-    //     console.log("res from post", res);
-    //     res && setTodo({ ...todos }, res);
-    //   })
-    //   .catch((err) => {
-    //     console.log(err);
-    //   });
     db.collection("planner")
       .add({
         item: item,
-        complete: false,
-        id: Date.now(),
+        timestamp: firebase.firestore.FieldValue.serverTimestamp(),
       })
       .then(() => {
         alert("Item has been submitted! 👍");
@@ -63,16 +41,13 @@ export default function Dashboard() {
         console.log("Couldn't add item!");
       });
 
-    setTodo('');
+    setItem("");
 
-    const newTodos = [...todos, { item, id: Date.now(), complete: false }];
-    setTodos(newTodos);
     setNotify(notify + 1);
   };
 
-  const removeItem = (id) => {
-    axios.delete(`http://localhost:4000/todos/${id}`, id);
-    setTodos(todos.filter((item) => item.id !== id));
+  const removeItem = () => {
+    db.collection("planner").doc("id").delete();
     setNotify(todos.length - 1);
   };
 
@@ -104,13 +79,12 @@ export default function Dashboard() {
       <NavBar notify={notify} logout={handleLogout} />
       <Home email={currentUser.email} />
       <Todo
-        todo={todo}
+        todo={item}
         todos={todos}
         addItem={addItem}
         removeItem={removeItem}
         lineThrough={lineThrough}
       />
-      {/* <Planner /> */}
     </div>
   );
 }

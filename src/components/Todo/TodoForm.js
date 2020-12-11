@@ -24,7 +24,7 @@ const TodoForm = ({ todo, addItem }) => {
             onChange={(e) => setItem(e.target.value)}
           ></input>
           <div className="todo-Button">
-            <button id="add-button" type="submit" value="add item">
+            <button disabled={!item} id="add-button" type="submit" value="add item">
               Add
             </button>
           </div>
