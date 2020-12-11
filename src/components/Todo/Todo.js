@@ -2,6 +2,10 @@ import React, { useState, useEffect } from "react";
 import TodoForm from "../Todo/TodoForm";
 import TodoList from "../Todo/TodoList";
 import "./Todo.css";
+import { db } from "../../firebase";
+
+
+
 
 const Todo = ({ todo, todos, addItem, removeItem, lineThrough }) => {
   return (

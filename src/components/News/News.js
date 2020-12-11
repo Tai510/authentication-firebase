@@ -13,7 +13,7 @@ const News = () => {
   const [random, setRandom] = useState();
 
   useEffect(() => {
-    // getNews();
+    getNews();
   }, []);
 
   const getNews = async () => {
@@ -24,7 +24,7 @@ const News = () => {
     const [info] = data.articles.map((list) => {
       setNews(list);
     });
-    console.log("News Data:", data);
+    // console.log("News Data:", data);
   };
 
   return (

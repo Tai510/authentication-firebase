@@ -7,6 +7,8 @@ import Calendar from "react-calendar";
 import Home from "./Home/Home";
 import Todo from "./Todo/Todo";
 import axios from "axios";
+import Planner from "./Planner";
+import { db } from "../firebase";
 
 export default function Dashboard() {
   const [error, setError] = useState("");
@@ -17,31 +19,51 @@ export default function Dashboard() {
   const [notify, setNotify] = useState(0);
 
   useEffect(() => {
-    axios
-      .get("http://localhost:4000/todos")
-      .then((res) => {
-        setTodos(res.data);
-        setNotify(todos.length);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+    // axios
+    //   .get("http://localhost:4000/todos")
+    //   .then((res) => {
+    //     setTodos(res.data);
+    //     setNotify(todos.length);
+    //   })
+    //   .catch((err) => {
+    //     console.log(err);
+    //   });
+    db.collection('planner').get().then((snapshot) => {
+        snapshot.docs.forEach(doc => {
+          console.log('SnapShot :', doc.data())
+        })
+    })
   }, [todo, notify]);
 
   const addItem = (item) => {
-    axios
-      .post("http://localhost:4000/todos", {
-        item,
-        id: Date.now(),
+    // axios
+    //   .post("http://localhost:4000/todos", {
+    //     item,
+    //     id: Date.now(),
+    //     complete: false,
+    //   })
+    //   .then((res) => {
+    //     console.log("res from post", res);
+    //     res && setTodo({ ...todos }, res);
+    //   })
+    //   .catch((err) => {
+    //     console.log(err);
+    //   });
+    db.collection("planner")
+      .add({
+        item: item,
         complete: false,
+        id: Date.now(),
       })
-      .then((res) => {
-        console.log("res from post", res);
-        res && setTodo({ ...todos }, res);
+      .then(() => {
+        alert("Item has been submitted! 👍");
       })
-      .catch((err) => {
-        console.log(err);
+      .catch((error) => {
+        alert(error.message);
+        console.log("Couldn't add item!");
       });
+
+    setTodo('');
 
     const newTodos = [...todos, { item, id: Date.now(), complete: false }];
     setTodos(newTodos);
@@ -88,6 +110,7 @@ export default function Dashboard() {
         removeItem={removeItem}
         lineThrough={lineThrough}
       />
+      {/* <Planner /> */}
     </div>
   );
 }

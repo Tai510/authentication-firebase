@@ -16,7 +16,7 @@ const Weather = () => {
   const [regions, setRegions] = useState([]);
   const [countries, setCountries] = useState([]);
 
-  const API_KEY = "cf3faa22250a94532c402637c18e357f";
+  const API_KEY = "36ed3dfc4ff24137f47a06fffebaa187";
 
   useEffect(() => {
       getWeather();
@@ -40,12 +40,12 @@ const Weather = () => {
     );
     const data = await response.json();
     setInfo(data);
-    console.log("info...", data);
+    // console.log("info...", data);
 
     // Values for the App
     const temperature = data.current.temperature;
     setTemperatures(temperature);
-    const fahrenheit = Math.floor((temperature * 9) / 5 + 32 + 26);
+    const fahrenheit = Math.floor((temperature * 9) / 5 + 32);
     setFahrenheits(fahrenheit);
     const location = data.location.name;
     setLocations(location);
