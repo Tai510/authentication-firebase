@@ -44,7 +44,7 @@ const Home = ({ email }) => {
       <div className="left-section-home">
         <div className="profile-div">
           <div className="profile-info">
-            <label>Account Details</label>
+            <label>Account Detail$</label>
             <p>Logged in as {email}</p>
             {/* <Link
               id="update-button"
