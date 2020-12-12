@@ -12,6 +12,7 @@ import {
 import "./NavBar.css";
 import { RiHome3Line } from "react-icons/ri";
 import { RiNotification3Line } from "react-icons/ri";
+import { CgProfile } from "react-icons/cg";
 
 const NavBar = ({ logout, notify }) => {
   return (
@@ -19,6 +20,9 @@ const NavBar = ({ logout, notify }) => {
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="mr-auto">
+          <Nav.Link className="home-button" href="/update-profile">
+            <CgProfile />
+          </Nav.Link>
           <Nav.Link className="home-button" href="/">
             <RiHome3Line />
           </Nav.Link>
@@ -30,15 +34,9 @@ const NavBar = ({ logout, notify }) => {
           </Nav.Link>
         </Nav>
         <Form inline>
-          <DropdownButton
-            className="dropdown-settings"
-            id="dropdown-basic-button"
-            variant="outline-success"
-            title="settings"
-          >
-            <Dropdown.Item href="/update-profile">Update Profile</Dropdown.Item>
-            <Dropdown.Item onClick={logout}>Logout</Dropdown.Item>
-          </DropdownButton>
+          <Button className="dropdown-settings" variant="outline-success">
+            Logout
+          </Button>
         </Form>
       </Navbar.Collapse>
     </Navbar>

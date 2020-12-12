@@ -13,7 +13,7 @@ export default function Dashboard() {
   const history = useHistory();
   const [todos, setTodos] = useState([]);
   const [input, setInput] = useState("");
-  const [notify, setNotify] = useState();
+  const [notify, setNotify] = useState(0);
 
   useEffect(() => {
     db.collection("planner")
@@ -22,7 +22,8 @@ export default function Dashboard() {
         setTodos(
           snapshot.docs.map((doc) => ({ id: doc.id, item: doc.data().item }))
         );
-        setNotify(parseInt(todos.length));
+        // setNotify(parseInt(todos.length))
+        console.log("Noti Gang :", notify);
       });
   }, [input, notify]);
 
@@ -36,7 +37,7 @@ export default function Dashboard() {
         alert(error.message);
         console.log("Couldn't add item!");
       });
-
+    setNotify(notify + 1);
     setInput("");
   };
 
@@ -55,7 +56,7 @@ export default function Dashboard() {
     <div>
       <NavBar notify={notify} logout={handleLogout} />
       <Home email={currentUser.email} />
-      <Todo todo={input} todos={todos} addItem={addItem} />
+      <Todo setNotify={setNotify} notify={notify} todo={input} todos={todos} addItem={addItem} />
     </div>
   );
 }
