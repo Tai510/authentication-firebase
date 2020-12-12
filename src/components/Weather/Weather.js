@@ -1,10 +1,8 @@
 import React, { useState, useEffect } from "react";
 import "./Weather.css";
-import { WiHumidity } from "react-icons/wi/";
-import { FiThermometer, FiWind } from "react-icons/fi";
+require('dotenv').config();
 
 const Weather = () => {
-  // Weather
   const [info, setInfo] = useState([]);
   const [search, setSearch] = useState("");
   const [query, setQuery] = useState("Sonoma");
@@ -16,11 +14,9 @@ const Weather = () => {
   const [regions, setRegions] = useState([]);
   const [countries, setCountries] = useState([]);
 
-
-
   useEffect(() => {
-      getWeather();
-  }, [query])
+    // getWeather();
+  }, [query]);
 
   const getSearch = (e) => {
     e.preventDefault();
@@ -36,13 +32,12 @@ const Weather = () => {
 
   const getWeather = async () => {
     const response = await fetch(
-      process.env.REACT_APP_WEATHER_URL
+      `https://cors-anywhere.herokuapp.com/http://api.weatherstack.com/current?access_key=36ed3dfc4ff24137f47a06fffebaa187&query=sonoma`
     );
     const data = await response.json();
     setInfo(data);
     // console.log("info...", data);
-
-    // Values for the App
+    
     const temperature = data.current.temperature;
     setTemperatures(temperature);
     const fahrenheit = Math.floor((temperature * 9) / 5 + 32);
@@ -59,13 +54,14 @@ const Weather = () => {
   return (
     <div>
       <div className="weather-div">
-        <h3>{locations}</h3>
+        <h3>Sonoma{locations}</h3>
         <div className="temp">
           <h4 className="fahrenheit">
-            {fahrenheits}81<span>°F</span>
+            {fahrenheits}
+            <span>55°F</span>
           </h4>
         </div>
-        <h5>{descriptions}Clear</h5>
+        <h5>Mist{descriptions}</h5>
       </div>
     </div>
   );

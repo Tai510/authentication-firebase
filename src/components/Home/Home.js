@@ -44,8 +44,8 @@ const Home = ({ email }) => {
       <div className="left-section-home">
         <div className="profile-div">
           <div className="profile-info">
-            <label>Profile</label>
-            <p>Email: {email}</p>
+            <label>Account Details</label>
+            <p>Logged in as {email}</p>
             {/* <Link
               id="update-button"
               to="/update-profile"

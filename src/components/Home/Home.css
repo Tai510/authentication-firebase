@@ -187,14 +187,14 @@
 }
 
 .profile-info label {
-  margin-top: 13px;
+  padding-top: 13px;
   font-size: 22px;
   font-weight: bolder;
   text-shadow: 1px 1px grey;
 }
 
 .profile-info p {
-  margin-bottom: 5px;
+  padding-bottom: 13px;
   font-weight: bolder;
   text-shadow: 1px 1px grey;
 }

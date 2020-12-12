@@ -11,7 +11,7 @@ const MyCalendar = ({ greeting, user }) => {
   return (
     <div className="calendar-box">
       <div className="greeting-text">
-        {greeting} {user}
+        {greeting}
       </div>
       <div className="Calendar">
         <Calendar onChange={onChange} value={date} />
