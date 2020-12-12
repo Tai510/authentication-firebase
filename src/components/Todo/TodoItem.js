@@ -1,10 +1,10 @@
 import React from "react";
-import { db } from "../../firebase";
+import { db, auth } from "../../firebase";
 
 const TodoItem = (props) => {
   const removeItem = (e) => {
     e.preventDefault();
-    db.collection("planner").doc(props.id).delete();
+    db.collection(auth.currentUser.uid).doc(props.id).delete();
   };
   return (
     <div className="items">
