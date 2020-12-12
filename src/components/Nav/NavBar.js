@@ -6,12 +6,12 @@ import {
   Form,
   FormControl,
   Button,
+  Dropdown,
+  DropdownButton,
 } from "react-bootstrap";
 import "./NavBar.css";
 import { RiHome3Line } from "react-icons/ri";
 import { RiNotification3Line } from "react-icons/ri";
-import { useAuth } from "../../contexts/AuthContext";
-import { useHistory } from "react-router-dom";
 
 const NavBar = ({ logout, notify }) => {
   return (
@@ -24,7 +24,7 @@ const NavBar = ({ logout, notify }) => {
           </Nav.Link>
           <Nav.Link className="notification-button" href="#planner">
             <RiNotification3Line />
-            <div href='#planner' className="notify-amount">
+            <div href="#planner" className="notify-amount">
               <p>{notify}</p>
             </div>
           </Nav.Link>
@@ -43,9 +43,13 @@ const NavBar = ({ logout, notify }) => {
               </NavDropdown> */}
         </Nav>
         <Form inline>
-          <Button onClick={logout} variant="outline-success">
+          {/* <Button onClick={logout} variant="outline-success">
             Logout
-          </Button>
+          </Button> */}
+          <DropdownButton id="dropdown-basic-button" title="settings">
+            <Dropdown.Item href="/update-profile">Profile</Dropdown.Item>
+            <Dropdown.Item onClick={logout}>Logout</Dropdown.Item>
+          </DropdownButton>
         </Form>
       </Navbar.Collapse>
     </Navbar>

@@ -46,13 +46,13 @@ const Home = ({ email }) => {
           <div className="profile-info">
             <label>Profile</label>
             <p>Email: {email}</p>
-            <Link
+            {/* <Link
               id="update-button"
               to="/update-profile"
               className="btn btn-primary w-100 mt-3"
             >
               Update Profile
-            </Link>
+            </Link> */}
           </div>
         </div>
         <MyCalendar user={user} greeting={greeting} />
