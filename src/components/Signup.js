@@ -2,7 +2,7 @@ import React, { useRef, useState } from "react";
 import { Form, Button, Card, Alert } from "react-bootstrap";
 import { useAuth } from "../contexts/AuthContext";
 import { Link, useHistory } from "react-router-dom";
-import './Auth.css';
+import "./Auth.css";
 
 export default function Signup() {
   const emailRef = useRef();
@@ -15,11 +15,9 @@ export default function Signup() {
 
   async function handleSubmit(e) {
     e.preventDefault();
-
     if (passwordRef.current.value !== passwordConfirmRef.current.value) {
       return setError("Passwords do not match");
     }
-
     try {
       setError("");
       setLoading(true);
@@ -28,13 +26,12 @@ export default function Signup() {
     } catch {
       setError("Failed to create an account");
     }
-
     setLoading(false);
   }
 
   return (
     <>
-      <Card id='Register-Forms'>
+      <Card id="Register-Forms">
         <Card.Body>
           <h2 className="text-center mb-4">Sign Up</h2>
           {error && <Alert variant="danger">{error}</Alert>}

@@ -38,7 +38,6 @@ export default function Dashboard() {
       });
 
     setInput("");
-    setNotify(notify + 1);
   };
 
   async function handleLogout() {

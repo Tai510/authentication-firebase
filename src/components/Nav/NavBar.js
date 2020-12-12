@@ -28,26 +28,15 @@ const NavBar = ({ logout, notify }) => {
               <p>{notify}</p>
             </div>
           </Nav.Link>
-          {/* <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-                <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.2">
-                  Just in case
-                </NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.3">
-                  Just in case
-                </NavDropdown.Item>
-                <NavDropdown.Divider />
-                <NavDropdown.Item href="#action/3.4">
-                  Just in case
-                </NavDropdown.Item>
-              </NavDropdown> */}
         </Nav>
         <Form inline>
-          {/* <Button onClick={logout} variant="outline-success">
-            Logout
-          </Button> */}
-          <DropdownButton id="dropdown-basic-button" title="settings">
-            <Dropdown.Item href="/update-profile">Profile</Dropdown.Item>
+          <DropdownButton
+            className="dropdown-settings"
+            id="dropdown-basic-button"
+            variant="outline-success"
+            title="settings"
+          >
+            <Dropdown.Item href="/update-profile">Update Profile</Dropdown.Item>
             <Dropdown.Item onClick={logout}>Logout</Dropdown.Item>
           </DropdownButton>
         </Form>
