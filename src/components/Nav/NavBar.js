@@ -34,7 +34,7 @@ const NavBar = ({ logout, notify }) => {
           </Nav.Link>
         </Nav>
         <Form inline>
-          <Button className="dropdown-settings" variant="outline-success">
+          <Button onClick={logout} className="dropdown-settings" variant="outline-success">
             Logout
           </Button>
         </Form>
