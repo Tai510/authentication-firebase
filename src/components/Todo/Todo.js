@@ -2,22 +2,14 @@ import React, { useState, useEffect } from "react";
 import TodoForm from "../Todo/TodoForm";
 import TodoList from "../Todo/TodoList";
 import "./Todo.css";
-import { db } from "../../firebase";
 
-
-
-
-const Todo = ({ todo, todos, addItem, removeItem, lineThrough }) => {
+const Todo = ({ todo, todos, addItem }) => {
   return (
-    <div className="Todo-App-Main">
+    <div id="planner" className="Todo-App-Main">
       <div className="Todo">
-        <TodoForm todo={todo} addItem={addItem} removeItem={removeItem} />
+        <TodoForm todo={todo} addItem={addItem} />
         <div className="todo-list">
-          <TodoList
-            removeItem={removeItem}
-            todos={todos}
-            lineThrough={lineThrough}
-          />
+          <TodoList todos={todos} />
         </div>
         <div></div>
       </div>

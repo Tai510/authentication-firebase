@@ -12,7 +12,7 @@ export default function Dashboard() {
   const { currentUser, logout } = useAuth();
   const history = useHistory();
   const [todos, setTodos] = useState([]);
-  const [item, setItem] = useState("");
+  const [input, setInput] = useState("");
   const [notify, setNotify] = useState();
 
   useEffect(() => {
@@ -22,45 +22,23 @@ export default function Dashboard() {
         setTodos(
           snapshot.docs.map((doc) => ({ id: doc.id, item: doc.data().item }))
         );
-        console.log("Todos Id ...", todos);
         setNotify(parseInt(todos.length));
       });
-  }, [item, notify]);
+  }, [input, notify]);
 
-  const addItem = (item) => {
+  const addItem = (input) => {
     db.collection("planner")
       .add({
-        item: item,
+        item: input,
         timestamp: firebase.firestore.FieldValue.serverTimestamp(),
-      })
-      .then(() => {
-        alert("Item has been submitted! 👍");
       })
       .catch((error) => {
         alert(error.message);
         console.log("Couldn't add item!");
       });
 
-    setItem("");
-
+    setInput("");
     setNotify(notify + 1);
-  };
-
-  const removeItem = () => {
-    db.collection("planner").doc("id").delete();
-    setNotify(todos.length - 1);
-  };
-
-  const lineThrough = (id) => {
-    setTodos(
-      todos.map((item) => {
-        if (item.id === id) {
-          return { ...item, complete: !item.complete };
-        } else {
-          return item;
-        }
-      })
-    );
   };
 
   async function handleLogout() {
@@ -78,13 +56,7 @@ export default function Dashboard() {
     <div>
       <NavBar notify={notify} logout={handleLogout} />
       <Home email={currentUser.email} />
-      <Todo
-        todo={item}
-        todos={todos}
-        addItem={addItem}
-        removeItem={removeItem}
-        lineThrough={lineThrough}
-      />
+      <Todo todo={input} todos={todos} addItem={addItem} />
     </div>
   );
 }

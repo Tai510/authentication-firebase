@@ -24,7 +24,7 @@ const NavBar = ({ logout, notify }) => {
           </Nav.Link>
           <Nav.Link className="notification-button" href="#planner">
             <RiNotification3Line />
-            <div className="notify-amount">
+            <div href='#planner' className="notify-amount">
               <p>{notify}</p>
             </div>
           </Nav.Link>
