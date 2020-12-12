@@ -9,7 +9,7 @@ const News = () => {
   const weatherUrl2 = 'http://newsapi.org/v2/everything?q=Apple&from=2020-10-30&sortBy=popularity&apiKey=668b333d5efe410e90cc6e2a2573e41c'
 
   useEffect(() => {
-    getNews();
+    // getNews();
   }, []);
 
   const getNews = async () => {

@@ -11,7 +11,6 @@ import { FaYoutube } from "react-icons/fa";
 import { ImFacebook } from "react-icons/im";
 import Weather from "../Weather/Weather";
 import News from "../News/News";
-import { Link } from "react-router-dom";
 import { AiOutlineStock } from "react-icons/ai";
 
 const Home = ({ email }) => {

@@ -4,7 +4,7 @@ import { useHistory } from "react-router-dom";
 import NavBar from "./Nav/NavBar";
 import Home from "./Home/Home";
 import Todo from "./Todo/Todo";
-import { db } from "../firebase";
+import { db, auth } from "../firebase";
 import firebase from "firebase/app";
 
 export default function Dashboard() {
@@ -16,18 +16,19 @@ export default function Dashboard() {
   const [notify, setNotify] = useState();
 
   useEffect(() => {
-    db.collection("planner")
+    db.collection(auth.currentUser.uid)
       .orderBy("timestamp", "asc")
       .onSnapshot((snapshot) => {
         setTodos(
           snapshot.docs.map((doc) => ({ id: doc.id, item: doc.data().item }))
         );
         setNotify(parseInt(todos.length));
+        // console.log("Noti Gang :", notify);
       });
   }, [input, notify]);
 
   const addItem = (input) => {
-    db.collection("planner")
+    db.collection(auth.currentUser.uid)
       .add({
         item: input,
         timestamp: firebase.firestore.FieldValue.serverTimestamp(),
@@ -36,7 +37,6 @@ export default function Dashboard() {
         alert(error.message);
         console.log("Couldn't add item!");
       });
-
     setInput("");
   };
 
