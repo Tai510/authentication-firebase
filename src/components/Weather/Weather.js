@@ -4,12 +4,13 @@ import "./Weather.css";
 require("dotenv").config();
 
 const Weather = ({ town }) => {
-  const city = [];
-  city.push(town);
+  // const city = [];
+  // city.push(town);
+  // console.log('City :',city)
 
   const [info, setInfo] = useState([]);
   const [search, setSearch] = useState("");
-  const [query, setQuery] = useState(city[0]);
+  const [query, setQuery] = useState();
   const [temperatures, setTemperatures] = useState([]);
   const [descriptions, setDescriptions] = useState([]);
   const [fahrenheits, setFahrenheits] = useState([]);
@@ -17,22 +18,11 @@ const Weather = ({ town }) => {
 
   useEffect(() => {
     getWeather();
-  }, [town]);
-
-  const getSearch = (e) => {
-    e.preventDefault();
-    setQuery(search);
-    setSearch("");
-  };
-
-  const updateSearch = (e) => {
-    e.preventDefault();
-    setSearch(e.target.value);
-  };
+  }, []);
 
   const getWeather = async () => {
     const response = await fetch(
-      `https://cors-anywhere.herokuapp.com/http://api.weatherstack.com/current?access_key=36ed3dfc4ff24137f47a06fffebaa187&query=${query}`
+      `https://cors-anywhere.herokuapp.com/http://api.weatherstack.com/current?access_key=cf3faa22250a94532c402637c18e357f&query=sonoma`
     );
     const data = await response.json();
     setInfo(data);

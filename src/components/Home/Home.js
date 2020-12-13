@@ -36,7 +36,7 @@ const Home = ({ email, town }) => {
 
   useEffect(() => {
     greetUser();
-  }, [greetUser, event]);
+  }, [greetUser, event, town]);
 
   return (
     <div className="Home">
