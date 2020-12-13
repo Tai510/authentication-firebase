@@ -165,7 +165,7 @@
   height: 100px;
   margin-top: 5px;
   margin-left: 10px;
-  border: 1px solid #fff;
+  /* border: 1px solid #fff; */
   background: cadetblue;
   cursor: pointer;
 }
@@ -209,4 +209,282 @@
   outline: none;
   border: 1px solid white;
   font-weight: bolder;
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) {
+  .Home {
+    flex-direction: column;
+    height: 100% !important;
+  }
+  .profile-div {
+    width: 90% !important;
+    margin: auto !important;
+    margin-top: 10px !important;
+    margin-bottom: 10px !important;
+  }
+  .greeting-text {
+    width: 100% !important;
+  }
+  .calendar-box {
+    width: 90% !important;
+    margin: auto !important;
+    margin-bottom: 10px !important;
+  }
+  .News {
+    width: 90% !important;
+    margin: auto !important;
+    margin-bottom: 10px !important;
+  }
+  .news-img-div img {
+    width: 90% !important;
+    margin: auto !important;
+  }
+  .news-details-div,
+  .news-img-div img {
+    width: 90% !important;
+    margin: auto !important;
+  }
+  .weather-div {
+    width: 90% !important;
+    margin: auto !important;
+    margin-bottom: 10px !important;
+  }
+  .right-section-home {
+    width: 100% !important;
+  }
+  .second-row-home {
+    width: 100% !important;
+  }
+  .food-home {
+    width: 125px !important;
+    padding-left: 34px !important;
+    padding-top: 7px;
+  }
+  .mail-home {
+    width: 125px !important;
+    margin-left: 11px !important;
+    padding-left: 34px !important;
+    padding-top: 7px;
+  }
+  .Stocks {
+    width: 125px !important;
+    padding-left: 34px !important;
+    padding-top: 7px;
+  }
+  .stocks {
+    width: 125px !important;
+    margin-left: 36px !important;
+    border: 0px solid white !important;
+  }
+  .Facebook {
+    width: 55px !important;
+    padding-left: 14px !important;
+    padding-top: 3px;
+  }
+  .Amazon {
+    width: 55px !important;
+    padding-left: 14px !important;
+    padding-top: 3px;
+  }
+  .Netflix {
+    width: 55px !important;
+    padding-left: 14px !important;
+    padding-top: 3px;
+  }
+  .Youtube {
+    width: 55px !important;
+    padding-left: 14px !important;
+    padding-top: 3px;
+  }
+  .social-1 {
+    width: 125px;
+  }
+  .social-2 {
+    width: 125px;
+  }
+  .social-media {
+    width: 90% !important;
+    margin: auto;
+  }
+
+  /* Todo Form */
+  .todo-input {
+    width: 100% !important;
+    flex-direction: column;
+  }
+  .todo-input input {
+    width: 100% !important;
+  }
+  #add-button {
+    width: 100% !important;
+    margin: 0 !important;
+    margin-top: 5px !important;
+  }
+  .TodoForm {
+    width: 100% !important;
+  }
+}
+
+@media only screen and (device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) {
+  .food-home {
+    width: 145px !important;
+    padding-left: 34px !important;
+    padding-top: 7px;
+  }
+  .mail-home {
+    width: 145px !important;
+    margin-left: 19px !important;
+    padding-left: 34px !important;
+    padding-top: 7px;
+  }
+  .Stocks {
+    width: 145px !important;
+    padding-left: 34px !important;
+    padding-top: 7px;
+  }
+  .stocks {
+    width: 145px !important;
+    margin-left: 64px !important;
+    border: 0px solid white !important;
+  }
+  .Facebook {
+    width: 70px !important;
+    padding-left: 22px !important;
+    padding-top: 3px;
+  }
+  .Amazon {
+    width: 70px !important;
+    padding-left: 22px !important;
+    padding-top: 3px;
+  }
+  .Netflix {
+    width: 70px !important;
+    padding-left: 22px !important;
+    padding-top: 3px;
+  }
+  .Youtube {
+    width: 70px !important;
+    padding-left: 22px !important;
+    padding-top: 3px;
+  }
+  .social-1 {
+    width: 145px !important;
+  }
+  .social-2 {
+    width: 145px !important;
+  }
+  .social-media {
+    width: 90% !important;
+    margin: auto;
+  }
+}
+
+@media only screen and (device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) {
+  .food-home {
+    width: 165px !important;
+    padding-left: 57px !important;
+    padding-top: 7px;
+  }
+  .mail-home {
+    width: 165px !important;
+    margin-left: 15px !important;
+    padding-left: 57px !important;
+    padding-top: 7px;
+  }
+  .Stocks {
+    width: 165px !important;
+    padding-left: 57px !important;
+    padding-top: 7px;
+  }
+  .stocks {
+    width: 165px !important;
+    margin-left: 80px !important;
+    border: 0px solid white !important;
+  }
+  .Facebook {
+    width: 80px !important;
+    padding-left: 29px !important;
+    padding-top: 3px;
+  }
+  .Amazon {
+    width: 80px !important;
+    padding-left: 29px !important;
+    padding-top: 3px;
+  }
+  .Netflix {
+    width: 80px !important;
+    padding-left: 29px !important;
+    padding-top: 3px;
+  }
+  .Youtube {
+    width: 80px !important;
+    padding-left: 29px !important;
+    padding-top: 3px;
+  }
+  .social-1 {
+    width: 165px !important;
+  }
+  .social-2 {
+    width: 165px !important;
+  }
+  .social-media {
+    border: 1px solid pink;
+    width: 90% !important;
+    margin: auto;
+  }
+}
+
+@media only screen and (device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) {
+  .food-home {
+    width: 140px !important;
+    padding-left: 57px !important;
+    padding-top: 7px;
+  }
+  .mail-home {
+    width: 140px !important;
+    margin-left: 30px !important;
+    padding-left: 44px !important;
+    padding-top: 7px;
+  }
+  .Stocks {
+    width: 140px !important;
+    padding-left: 44px !important;
+    padding-top: 7px;
+  }
+  .stocks {
+    width: 140px !important;
+    margin-left: 70px !important;
+    border: 0px solid white !important;
+  }
+  .Facebook {
+    width: 65px !important;
+    padding-left: 21px !important;
+    padding-top: 3px;
+  }
+  .Amazon {
+    width: 65px !important;
+    padding-left: 21px !important;
+    padding-top: 3px;
+  }
+  .Netflix {
+    width: 65px !important;
+    padding-left: 21px !important;
+    padding-top: 3px;
+  }
+  .Youtube {
+    width: 65px !important;
+    padding-left: 21px !important;
+    padding-top: 3px;
+  }
+  .social-1 {
+    width: 140px !important;
+  }
+  .social-2 {
+    width: 140px !important;
+  }
+  .social-media {
+    border: 1px solid pink;
+    width: 90% !important;
+    margin: auto;
+  }
 }
