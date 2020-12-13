@@ -8,33 +8,34 @@
   }
 }
 
-.home-button {
-  border: 1px solid #28a745;
-  height: 30px;
-  width: 30px;
-  border-radius: 50%;
-  padding-top: 15px;
-  margin-right: 10px;
-  color: #28a745 !important;
+@media (min-width: 1281px) {
+  .NavBar label {
+    display: none;
+  }
 }
 
-.home-button:hover {
-  background: #28a745;
-  color: white !important;
-}
-
-.notification-button {
-  border: 1px solid green;
-  height: 30px;
-  width: 30px;
-  border-radius: 50%;
-  padding-top: 15px;
-  color: #28a745 !important;
-}
-
-.notification-button:hover {
-  background: #28a745;
-  color: white !important;
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) {
+  #nav-icons {
+    display: none !important;
+  }
+  .notify-amount {
+    margin-left: 180px !important;
+  }
+  .notify-amount p {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    padding-right: 8px;
+  }
+  .navbar-light .navbar-nav .nav-link {
+    text-align: center;
+  }
+  .btn-outline-success {
+    color: #28a745;
+    border-color: #28a745;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 5px;
+  }
 }
 
 .notify-amount {
@@ -44,7 +45,7 @@
   border-radius: 50%;
   background: #e45252;
   color: #fff;
-  margin-left: 11px;
+  margin-left: 16px;
   margin-top: -35px;
   padding-top: -7px;
   padding-left: 8px;
@@ -62,6 +63,11 @@
   font-size: 13px;
 }
 
+#nav-icons {
+  color: black !important;
+  font-size: 22px;
+}
+
 @media (min-width: 992px) {
   .navbar-expand-lg .navbar-nav .nav-link {
     padding-left: 6px !important;
@@ -77,15 +83,15 @@
   display: none;
   float: left;
   min-width: 10rem;
-  padding: .5rem 0;
-  margin: .125rem 0 0;
+  padding: 0.5rem 0;
+  margin: 0.125rem 0 0;
   font-size: 1rem;
   color: black;
   text-align: left;
   list-style: none;
   background-color: white;
   background-clip: padding-box;
-  border: 1px solid rgba(0,0,0,.15);
-  border-radius: .25rem;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 0.25rem;
   outline: none !important;
 }
