@@ -1,14 +1,20 @@
 import React, { useState, useEffect } from "react";
 import "./News.css";
 import NewsList from "../News/NewsList";
-require('dotenv').config();
+require("dotenv").config();
 
 const News = () => {
   const [news, setNews] = useState([]);
-  const weatherUrl = 'http://newsapi.org/v2/top-headlines?country=us&apiKey=668b333d5efe410e90cc6e2a2573e41c'
-  const weatherUrl2 = 'http://newsapi.org/v2/everything?q=Apple&from=2020-10-30&sortBy=popularity&apiKey=668b333d5efe410e90cc6e2a2573e41c'
+  const weatherUrl =
+    "http://newsapi.org/v2/top-headlines?country=us&apiKey=668b333d5efe410e90cc6e2a2573e41c";
+  const weatherUrl2 =
+    "http://newsapi.org/v2/everything?q=Apple&from=2020-10-30&sortBy=popularity&apiKey=668b333d5efe410e90cc6e2a2573e41c";
 
   useEffect(() => {
+    const interval = setInterval(() => {
+      getNews();
+    }, 10000);
+    return () => clearInterval(interval);
     // getNews();
   }, []);
 
@@ -17,10 +23,10 @@ const News = () => {
     const randUrl = urls[Math.floor(Math.random() * urls.length)];
     const response = await fetch(`${weatherUrl}`);
     const data = await response.json();
-    const [info] = data.articles.map((list) => {
-      setNews(list);
-    });
-    // console.log("News Data:", data);
+    // console.log("News Data:", data.articles[data.articles]);
+    const Idx =
+      Math.floor(Math.random() * (data.articles.length - 1 - 1 + 1)) + 1;
+    setNews(data.articles[Idx]);
   };
 
   return (
