@@ -15,17 +15,13 @@ const News = () => {
       getNews();
     }, 10000);
     return () => clearInterval(interval);
-    // getNews();
   }, []);
 
-  const getNews = async () => {
-    const urls = [weatherUrl, weatherUrl2];
-    const randUrl = urls[Math.floor(Math.random() * urls.length)];
+  const getNews = async () => {  
     const response = await fetch(`${weatherUrl}`);
     const data = await response.json();
-    // console.log("News Data:", data.articles[data.articles]);
-    const Idx =
-      Math.floor(Math.random() * (data.articles.length - 1 - 1 + 1)) + 1;
+    console.log("News Data:", data);
+    const Idx = Math.floor(Math.random() * (data.articles.length - 1 - 1 + 1)) + 1;
     setNews(data.articles[Idx]);
   };
 
