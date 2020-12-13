@@ -66,88 +66,91 @@ const Home = ({ email }) => {
           <Weather />
         </div>
 
-        <div className="second-row-home">
-          <a
-            style={{ display: "table-cell" }}
-            target="_blank"
-            href="https://www.google.com/search?q=food+near+me&source=lmns&bih=744&biw=1440&hl=en&sa=X&ved=2ahUKEwiTtInUh9jsAhX4ATQIHW9WCxAQ_AUoAHoECAEQAA"
-          >
-            <div className="food-home">
-              <IoIosRestaurant />
-            </div>
-          </a>
-          <a
-            style={{ display: "table-cell" }}
-            target="_blank"
-            href="https://www.google.com/webhp?hl=en&sa=X&ved=0ahUKEwjLuuTUh9jsAhWlHzQIHbLEACMQPAgI"
-          >
-            <div className="mail-home">
-              <FcGoogle />
-            </div>
-          </a>
-        </div>
-
-        <div className="third-row-home">
-          <div className="social-boxes">
-            <div className="social-1">
-              <a
-                style={{ display: "table-cell" }}
-                target="_blank"
-                id="Facebook"
-                href="https://www.facebook.com/"
-              >
-                <div className="Facebook">
-                  <ImFacebook />
-                </div>
-              </a>
-              <a
-                style={{ display: "table-cell" }}
-                target="_blank"
-                id="Amazon"
-                href="https://www.amazon.com/"
-              >
-                <div className="Amazon">
-                  <FaAmazon />
-                </div>
-              </a>
-            </div>
-
-            <div className="social-2">
-              <a
-                style={{ display: "table-cell" }}
-                target="_blank"
-                id="Netflix"
-                href="https://www.netflix.com/"
-              >
-                <div className="Netflix">
-                  <RiNetflixFill />
-                </div>
-              </a>
-              <a
-                style={{ display: "table-cell" }}
-                target="_blank"
-                id="Youtube"
-                href="https://www.youtube.com/"
-              >
-                <div className="Youtube">
-                  <FaYoutube />
-                </div>
-              </a>
-            </div>
-          </div>
-
-          <div className="stocks">
+        <div className='social-media'>
+          <div className="second-row-home">
             <a
               style={{ display: "table-cell" }}
               target="_blank"
-              id="Stocks"
-              href="https://www.marketwatch.com/investing/stock/live"
+              href="https://www.google.com/search?q=food+near+me&source=lmns&bih=744&biw=1440&hl=en&sa=X&ved=2ahUKEwiTtInUh9jsAhX4ATQIHW9WCxAQ_AUoAHoECAEQAA"
             >
-              <div className="Stocks">
-                <AiOutlineStock />
+              <div className="food-home">
+                <IoIosRestaurant />
+              </div>
+            </a>
+            <a
+              style={{ display: "table-cell" }}
+              target="_blank"
+              href="https://www.google.com/webhp?hl=en&sa=X&ved=0ahUKEwjLuuTUh9jsAhWlHzQIHbLEACMQPAgI"
+            >
+              <div className="mail-home">
+                <FcGoogle />
               </div>
             </a>
           </div>
+
+          <div className="third-row-home">
+            <div className="social-boxes">
+              <div className="social-1">
+                <a
+                  style={{ display: "table-cell" }}
+                  target="_blank"
+                  id="Facebook"
+                  href="https://www.facebook.com/"
+                >
+                  <div className="Facebook">
+                    <ImFacebook />
+                  </div>
+                </a>
+                <a
+                  style={{ display: "table-cell" }}
+                  target="_blank"
+                  id="Amazon"
+                  href="https://www.amazon.com/"
+                >
+                  <div className="Amazon">
+                    <FaAmazon />
+                  </div>
+                </a>
+              </div>
+
+              <div className="social-2">
+                <a
+                  style={{ display: "table-cell" }}
+                  target="_blank"
+                  id="Netflix"
+                  href="https://www.netflix.com/"
+                >
+                  <div className="Netflix">
+                    <RiNetflixFill />
+                  </div>
+                </a>
+                <a
+                  style={{ display: "table-cell" }}
+                  target="_blank"
+                  id="Youtube"
+                  href="https://www.youtube.com/"
+                >
+                  <div className="Youtube">
+                    <FaYoutube />
+                  </div>
+                </a>
+              </div>
+            </div>
+
+            <div className="stocks">
+              <a
+                style={{ display: "table-cell" }}
+                target="_blank"
+                id="Stocks"
+                href="https://www.marketwatch.com/investing/stock/live"
+              >
+                <div className="Stocks">
+                  <AiOutlineStock />
+                </div>
+              </a>
+            </div>
+          </div>
+
         </div>
       </div>
     </div>
