@@ -66,7 +66,7 @@ const Home = ({ email }) => {
           <Weather />
         </div>
 
-        <div className='social-media'>
+        <div className="social-media">
           <div className="second-row-home">
             <a
               style={{ display: "table-cell" }}
@@ -150,7 +150,6 @@ const Home = ({ email }) => {
               </a>
             </div>
           </div>
-
         </div>
       </div>
     </div>
