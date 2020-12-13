@@ -13,7 +13,7 @@ import Weather from "../Weather/Weather";
 import News from "../News/News";
 import { AiOutlineStock } from "react-icons/ai";
 
-const Home = ({ email }) => {
+const Home = ({ email, town }) => {
   // Date
   const [date, setDate] = useState(new Date());
   const [hours, setHours] = useState(date.getHours());
@@ -45,13 +45,6 @@ const Home = ({ email }) => {
           <div className="profile-info">
             <label>Account Detail</label>
             <p>Logged in as {email}</p>
-            {/* <Link
-              id="update-button"
-              to="/update-profile"
-              className="btn btn-primary w-100 mt-3"
-            >
-              Update Profile
-            </Link> */}
           </div>
         </div>
         <MyCalendar user={user} greeting={greeting} />
@@ -63,7 +56,7 @@ const Home = ({ email }) => {
 
       <div className="right-section-home">
         <div className="first-row-home">
-          <Weather />
+          <Weather town={town} />
         </div>
 
         <div className="social-media">

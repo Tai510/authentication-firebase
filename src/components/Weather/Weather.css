@@ -28,3 +28,7 @@
   font-size: 30px;
   font-weight: bolder;
 }
+
+.fahrenheit span {
+  font-size: 55px;
+}

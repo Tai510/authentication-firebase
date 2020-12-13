@@ -15,7 +15,10 @@ export default function Dashboard() {
   const [input, setInput] = useState("");
   const [notify, setNotify] = useState();
 
+  const [town, setTown] = useState();
+
   useEffect(() => {
+    getLocation();
     db.collection(auth.currentUser.uid)
       .orderBy("timestamp", "asc")
       .onSnapshot((snapshot) => {
@@ -51,10 +54,24 @@ export default function Dashboard() {
     }
   }
 
+  const getLocation = async () => {
+    navigator.geolocation.getCurrentPosition(function (position) {
+      const { latitude, longitude } = position.coords;
+      fetch(
+        `https://api.opencagedata.com/geocode/v1/json?q=${latitude}+${longitude}&key=8854f3b07a0a43f3888063812ef1b63b`
+      )
+        .then((res) => res.json())
+        .then((data) => {
+          setTown(data.results[0].components.town);
+          console.log(town);
+        });
+    });
+  };
+
   return (
     <div>
       <NavBar notify={notify} logout={handleLogout} />
-      <Home email={currentUser.email} />
+      <Home town={town} email={currentUser.email} />
       <Todo todo={input} todos={todos} addItem={addItem} />
     </div>
   );
