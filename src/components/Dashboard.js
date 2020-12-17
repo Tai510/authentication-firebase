@@ -53,20 +53,6 @@ export default function Dashboard() {
     }
   }
 
-  // const getLocation = () => {
-  //   navigator.geolocation.getCurrentPosition(function (position) {
-  //     const { latitude, longitude } = position.coords;
-  //     fetch(
-  //       `https://api.opencagedata.com/geocode/v1/json?q=${latitude}+${longitude}&key=8854f3b07a0a43f3888063812ef1b63b`
-  //     )
-  //       .then((res) => res.json())
-  //       .then((data) => {
-  //         setTown(data.results[0].components.town);
-  //         console.log(town);
-  //       });
-  //   });
-  // };
-
   return (
     <div>
       <NavBar notify={notify} logout={handleLogout} />
