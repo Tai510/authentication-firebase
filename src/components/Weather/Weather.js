@@ -15,7 +15,7 @@ const Weather = () => {
   const [countries, setCountries] = useState([]);
 
   useEffect(() => {
-    // getWeather();
+    getWeather();
   }, [query]);
 
   const getSearch = (e) => {
@@ -54,14 +54,14 @@ const Weather = () => {
   return (
     <div>
       <div className="weather-div">
-        <h3>Sonoma{locations}</h3>
+        <h3>{/* Sonoma */}{locations}</h3>
         <div className="temp">
           <h4 className="fahrenheit">
             {fahrenheits}
-            <span>55°F</span>
+            <span>{/* 55 */}°F</span>
           </h4>
         </div>
-        <h5>Mist{descriptions}</h5>
+        <h5>{/* Mist */}{descriptions}</h5>
       </div>
     </div>
   );

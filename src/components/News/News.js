@@ -11,17 +11,19 @@ const News = () => {
     "http://newsapi.org/v2/everything?q=Apple&from=2020-10-30&sortBy=popularity&apiKey=668b333d5efe410e90cc6e2a2573e41c";
 
   useEffect(() => {
+    getNews();
     const interval = setInterval(() => {
       getNews();
     }, 10000);
     return () => clearInterval(interval);
   }, []);
 
-  const getNews = async () => {  
+  const getNews = async () => {
     const response = await fetch(`${weatherUrl}`);
     const data = await response.json();
     console.log("News Data:", data);
-    const Idx = Math.floor(Math.random() * (data.articles.length - 1 - 1 + 1)) + 1;
+    const Idx =
+      Math.floor(Math.random() * (data.articles.length - 1 - 1 + 1)) + 1;
     setNews(data.articles[Idx]);
   };
 
