@@ -45,13 +45,6 @@ const Home = ({ email }) => {
           <div className="profile-info">
             <label>Account Detail</label>
             <p>Logged in as {email}</p>
-            {/* <Link
-              id="update-button"
-              to="/update-profile"
-              className="btn btn-primary w-100 mt-3"
-            >
-              Update Profile
-            </Link> */}
           </div>
         </div>
         <MyCalendar user={user} greeting={greeting} />

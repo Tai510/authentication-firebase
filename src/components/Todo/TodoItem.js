@@ -6,6 +6,7 @@ const TodoItem = (props) => {
     e.preventDefault();
     db.collection(auth.currentUser.uid).doc(props.id).delete();
   };
+
   return (
     <div className="items">
       <div /* className={`list ${complete}`} */>
