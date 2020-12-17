@@ -12,6 +12,7 @@ import { ImFacebook } from "react-icons/im";
 import Weather from "../Weather/Weather";
 import News from "../News/News";
 import { AiOutlineStock } from "react-icons/ai";
+import axios from 'axios'
 
 const Home = ({ email }) => {
   // Date
@@ -22,8 +23,7 @@ const Home = ({ email }) => {
   const [greeting, setGreeting] = useState("Welcome");
   const [time, setTime] = useState("4:50 pm");
   const [event, setEvent] = useState(new Date());
-  const [user, setUser] = useState("Tashi");
-
+  
   function greetUser() {
     if (hours >= 18) {
       setGreeting("Good evening");
@@ -47,7 +47,7 @@ const Home = ({ email }) => {
             <p>Logged in as {email}</p>
           </div>
         </div>
-        <MyCalendar user={user} greeting={greeting} />
+        <MyCalendar greeting={greeting} />
       </div>
 
       <div className="Greeting">
