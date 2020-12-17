@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./Weather.css";
+import WeatherInfo from './WeatherInfo'
 
 require("dotenv").config();
 
@@ -62,16 +63,7 @@ const Weather = () => {
   };
   return (
     <div>
-      <div className="weather-div">
-        <h3>{locations}</h3>
-        <div className="temp">
-          <h4 className="fahrenheit">
-            {fahrenheits}
-            <span>°F</span>
-          </h4>
-        </div>
-        <h5>{descriptions}</h5>
-      </div>
+      < WeatherInfo location={locations} temperature={temperatures} fahrenheit={fahrenheits} description={descriptions} />
     </div>
   );
 };
