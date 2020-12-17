@@ -52,13 +52,13 @@ const Weather = () => {
     setInfo(data);
     // console.log("info...", info);
 
-    const temperature = info.current.temperature;
+    const temperature = data.current.temperature;
     setTemperatures(temperature);
     const fahrenheit = Math.floor((temperature * 9) / 5 + 32);
     setFahrenheits(fahrenheit);
-    const location = info.location.name;
+    const location = data.location.name;
     setLocations(location);
-    const description = info.current.weather_descriptions[0];
+    const description = data.current.weather_descriptions[0];
     setDescriptions(description);
   };
   return (
