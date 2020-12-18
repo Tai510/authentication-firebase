@@ -341,18 +341,18 @@ img {
 @media only screen and (device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) {
   .food-home {
     width: 145px !important;
-    padding-left: 34px !important;
+    padding-left: 47px !important;
     padding-top: 7px;
   }
   .mail-home {
     width: 145px !important;
     margin-left: 19px !important;
-    padding-left: 34px !important;
+    padding-left: 47px !important;
     padding-top: 7px;
   }
   .Stocks {
     width: 145px !important;
-    padding-left: 34px !important;
+    padding-left: 47px !important;
     padding-top: 7px;
   }
   .stocks {
@@ -450,7 +450,7 @@ img {
 @media only screen and (device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) {
   .food-home {
     width: 140px !important;
-    padding-left: 57px !important;
+    padding-left: 45px !important;
     padding-top: 7px;
   }
   .mail-home {
