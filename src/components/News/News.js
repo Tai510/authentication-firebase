@@ -2,11 +2,10 @@ import React, { useState, useEffect } from "react";
 import "./News.css";
 import NewsList from "../News/NewsList";
 require("dotenv").config();
-const NewsAPI = require('newsapi');
 
 const News = () => {
   const [news, setNews] = useState([]);
-  const NewsUrl = "https://cors-anywhere.herokuapp.com/http://newsapi.org/v2/top-headlines?country=us&apiKey=668b333d5efe410e90cc6e2a2573e41c";
+  const NewsUrl = `https://cors-anywhere.herokuapp.com/http://newsapi.org/v2/top-headlines?country=us&apiKey=668b333d5efe410e90cc6e2a2573e41c`;
 
   useEffect(() => {
     getNews();
