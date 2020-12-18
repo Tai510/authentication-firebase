@@ -5,7 +5,7 @@ require("dotenv").config();
 
 const News = () => {
   const [news, setNews] = useState([]);
-  const NewsUrl = `https://cors-anywhere.herokuapp.com/http://newsapi.org/v2/top-headlines?country=us&apiKey=668b333d5efe410e90cc6e2a2573e41c`;
+  const NewsUrl = process.env.REACT_APP_NEWS_URL;
 
   useEffect(() => {
     getNews();

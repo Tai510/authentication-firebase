@@ -20,7 +20,7 @@ const Weather = () => {
       navigator.geolocation.getCurrentPosition(function (position) {
         const { latitude, longitude } = position.coords;
         fetch(
-          `https://api.opencagedata.com/geocode/v1/json?q=${latitude}+${longitude}&key=8854f3b07a0a43f3888063812ef1b63b`
+          `https://api.opencagedata.com/geocode/v1/json?q=${latitude}+${longitude}&key=${process.env.REACT_APP_GEO_API}`
         )
           .then((res) => res.json())
           .then((data) => {
@@ -49,7 +49,7 @@ const Weather = () => {
 
   const getWeather = async () => {
     const response = await fetch(
-      `https://cors-anywhere.herokuapp.com/http://api.weatherstack.com/current?access_key=cf3faa22250a94532c402637c18e357f&query=${town}`
+      `${process.env.REACT_APP_WEATHER_URL}${town}`
     );
     const data = await response.json();
     setInfo(data);
