@@ -24,7 +24,7 @@
   .notify-amount p {
     margin-top: 0;
     margin-bottom: 1rem;
-    padding-right: 8px;
+    margin-left: -8px;
   }
   .navbar-light .navbar-nav .nav-link {
     text-align: center;
@@ -35,6 +35,24 @@
     margin: auto;
     margin-top: 10px;
     margin-bottom: 5px;
+  }
+}
+
+@media only screen and (device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) {
+  .notify-amount {
+    margin-left: 205px !important;
+  }
+}
+
+@media only screen and (device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) {
+  .notify-amount {
+    margin-left: 225px !important;
+  }
+}
+
+@media only screen and (device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) {
+  .notify-amount {
+    margin-left: 205px !important;
   }
 }
 
