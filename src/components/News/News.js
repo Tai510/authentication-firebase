@@ -16,7 +16,7 @@ const News = () => {
   }, []);
 
   const getNews = async () => {
-    const response = await fetch(`${NewsUrl}`);
+    const response = await fetch(`http://newsapi.org/v2/top-headlines?country=us&apiKey=668b333d5efe410e90cc6e2a2573e41c`);
     const data = await response.json();
     // console.log("News Data:", data);
     const Idx =

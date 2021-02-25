@@ -49,7 +49,7 @@ const Weather = () => {
 
   const getWeather = async () => {
     const response = await fetch(
-      `${process.env.REACT_APP_WEATHER_URL}${town}`
+      `http://api.weatherstack.com/current?access_key=cf3faa22250a94532c402637c18e357f&query=${town}`
     );
     const data = await response.json();
     setInfo(data);
