@@ -32,7 +32,7 @@ const Weather = () => {
       });
     };
     getLocation();
-    getWeather();
+    // getWeather();
   }, [query, town]);
 
   const getSearch = (e) => {
