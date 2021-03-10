@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from "react";
 import "./Weather.css";
 import WeatherInfo from "./WeatherInfo";
+import axios from 'axios'
 
 require("dotenv").config();
 
 const Weather = () => {
   const [info, setInfo] = useState([]);
   const [search, setSearch] = useState("");
-  const [query, setQuery] = useState();
+  const [query, setQuery] = useState('Sonoma');
   const [temperatures, setTemperatures] = useState([]);
   const [descriptions, setDescriptions] = useState([]);
   const [fahrenheits, setFahrenheits] = useState([]);
@@ -33,7 +34,7 @@ const Weather = () => {
     };
     getLocation();
     getWeather();
-  }, [query, town]);
+  }, [town]);
 
   const getSearch = (e) => {
     e.preventDefault();
@@ -49,11 +50,11 @@ const Weather = () => {
 
   const getWeather = async () => {
     const response = await fetch(
-      `http://api.weatherstack.com/current?access_key=cf3faa22250a94532c402637c18e357f&query=${town}`
+      `https://cors-anywhere.herokuapp.com/http://api.weatherstack.com/current?access_key=cf3faa22250a94532c402637c18e357f&query=${town}`
     );
     const data = await response.json();
     setInfo(data);
-    // console.log("info...", info);
+    console.log("info...", info);
 
     const temperature = data.current.temperature;
     setTemperatures(temperature);
