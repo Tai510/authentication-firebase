@@ -30,7 +30,7 @@ const NavBar = ({ logout, notify }) => {
           </Nav.Link>
           <Nav.Link className="notification-button" href="#planner">
             <RiNotification3Line id="nav-icons" />
-            <label>Noitification</label>
+            <label>Notification</label>
             <div href="#planner" className="notify-amount">
               <p>{notify}</p>
             </div>
