@@ -17,21 +17,6 @@ const Weather = () => {
   const [town, setTown] = useState();
 
   useEffect(() => {
-    const getLocation = () => {
-      navigator.geolocation.getCurrentPosition(function (position) {
-        const { latitude, longitude } = position.coords;
-        fetch(
-          `https://api.opencagedata.com/geocode/v1/json?q=${latitude}+${longitude}&key=${process.env.REACT_APP_GEO_API}`
-        )
-          .then((res) => res.json())
-          .then((data) => {
-            const city = [];
-            city.push(data.results[0].components.town);
-            setTown(city[0]);
-            console.log("Town", town);
-          });
-      });
-    };
     getLocation();
     getWeather();
   }, [town]);
@@ -46,6 +31,22 @@ const Weather = () => {
     e.preventDefault();
     setSearch(e.target.value);
     console.log("search value...", search);
+  };
+
+  const getLocation = () => {
+    navigator.geolocation.getCurrentPosition(function (position) {
+      const { latitude, longitude } = position.coords;
+      fetch(
+        `https://api.opencagedata.com/geocode/v1/json?q=${latitude}+${longitude}&key=${process.env.REACT_APP_GEO_API}`
+      )
+        .then((res) => res.json())
+        .then((data) => {
+          const city = [];
+          city.push(data.results[0].components.town);
+          setTown(city[0]);
+          console.log("Town", town);
+        });
+    });
   };
 
   const getWeather = async () => {
