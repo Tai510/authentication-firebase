@@ -17,8 +17,8 @@ const Weather = () => {
   const [town, setTown] = useState();
 
   useEffect(() => {
-    getLocation();
-    getWeather();
+    // getLocation();
+    // getWeather();
   }, [town]);
 
   const getSearch = (e) => {

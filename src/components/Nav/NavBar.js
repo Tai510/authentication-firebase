@@ -13,40 +13,32 @@ import "./NavBar.css";
 import { RiHome3Line } from "react-icons/ri";
 import { RiNotification3Line } from "react-icons/ri";
 import { GrUserSettings } from "react-icons/gr";
+import Todo from '../../components/Todo/Todo'
+
+
+
 
 const NavBar = ({ logout, notify }) => {
   return (
-    <Navbar className="NavBar" bg="light" expand="lg">
-      <Navbar.Toggle aria-controls="basic-navbar-nav" />
-      <Navbar.Collapse id="basic-navbar-nav">
-        <Nav className="mr-auto">
-          <Nav.Link className="home-button" href="/">
-            <RiHome3Line id="nav-icons" />
-            <label>Home</label>
-          </Nav.Link>
-          <Nav.Link className="home-button" href="/update-profile">
-            <GrUserSettings id="nav-icons" />
-            <label>Update Profile</label>
-          </Nav.Link>
-          <Nav.Link className="notification-button" href="#planner">
-            <RiNotification3Line id="nav-icons" />
-            <label>Notification</label>
-            <div href="#planner" className="notify-amount">
+    <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+  <Navbar.Brand href="/">LifeTracker</Navbar.Brand>
+  <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+  <Navbar.Collapse id="responsive-navbar-nav">
+    <Nav className="mr-auto">
+      <NavDropdown title="My Folder" id="collasible-nav-dropdown">
+        <NavDropdown.Item href='/update-profile'>Account</NavDropdown.Item>
+  <NavDropdown.Item href="#planner">Todo List <div href="#planner" className="notify-amount">
               <p>{notify}</p>
-            </div>
-          </Nav.Link>
-        </Nav>
-        <Form inline>
-          <Button
-            onClick={logout}
-            className="dropdown-settings"
-            variant="outline-success"
-          >
-            Logout
-          </Button>
-        </Form>
-      </Navbar.Collapse>
-    </Navbar>
+            </div></NavDropdown.Item>
+        <NavDropdown.Item href="#action/3.3">TBA</NavDropdown.Item>
+        <NavDropdown.Divider />
+        <NavDropdown.Item onClick={logout}>Logout</NavDropdown.Item>
+      </NavDropdown>
+    </Nav>
+    <Nav>
+    </Nav>
+  </Navbar.Collapse>
+</Navbar>
   );
 };
 

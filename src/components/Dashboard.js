@@ -15,10 +15,9 @@ export default function Dashboard() {
   const [input, setInput] = useState("");
   const [notify, setNotify] = useState();
 
-  // const [town, setTown] = useState();
+
 
   useEffect(() => {
-    // getLocation();
     db.collection(auth.currentUser.uid)
       .orderBy("timestamp", "asc")
       .onSnapshot((snapshot) => {

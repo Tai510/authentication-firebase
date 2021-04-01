@@ -19,12 +19,12 @@
     display: none !important;
   }
   .notify-amount {
-    margin-left: 180px !important;
+    margin-left: 75px !important;
   }
   .notify-amount p {
     margin-top: 0;
     margin-bottom: 1rem;
-    margin-left: -8px;
+    margin-left: -1px;
   }
   .navbar-light .navbar-nav .nav-link {
     text-align: center;
@@ -40,19 +40,19 @@
 
 @media only screen and (device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) {
   .notify-amount {
-    margin-left: 205px !important;
+    margin-left: 75px !important;
   }
 }
 
 @media only screen and (device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) {
   .notify-amount {
-    margin-left: 225px !important;
+    margin-left: 75px !important;
   }
 }
 
 @media only screen and (device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) {
   .notify-amount {
-    margin-left: 205px !important;
+    margin-left: 75px !important;
   }
 }
 
@@ -69,8 +69,8 @@
   border-radius: 50%;
   background: #e45252;
   color: #fff;
-  margin-left: 16px;
-  margin-top: -35px;
+  margin-left: 69px;
+  margin-top: -25px;
   padding-top: -7px;
   padding-left: 8px;
 }
