@@ -157,23 +157,23 @@
 @media only screen and (device-width: 390px) and (device-height: 844px) and (-webkit-device-pixel-ratio: 3) {
   .Stocks {
     margin-left: -25px !important;
-    width: 150px !important;
+    width: 125px !important;
   }
   .mail-home {
-    width: 150px !important;
+    width: 125px !important;
     padding-left: 50px !important;
     padding-top: 7px;
   }
   .food-home {
-    width: 150px !important;
+    width: 125px !important;
     padding-left: 50px !important;
     padding-top: 7px;
   }
   .social-1 {
-    width: 150px !important;
+    width: 125px !important;
   }
   .social-2 {
-    width: 150px !important;
+    width: 125px !important;
   }
 
   .Facebook {
@@ -341,7 +341,7 @@ img {
     display: none !important;
   }
   .stocks {
-    width: 150px !important;
+    width: 125px !important;
     margin-left: 36px !important;
     border: 1px solid white !important;
     text-align: center;

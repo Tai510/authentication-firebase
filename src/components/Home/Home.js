@@ -138,7 +138,7 @@ const Home = ({ email }) => {
                 href="https://www.marketwatch.com/investing/stock/live"
               >
                 <div className="Stocks">
-                <i class="fas fa-hand-holding-usd"></i>
+                <i class="fas fa-comment-dollar"></i>
                 </div>
               </a>
             </div>
