@@ -36,11 +36,18 @@
     margin-top: 10px;
     margin-bottom: 5px;
   }
+
+  .navbar-dark .navbar-brand {
+    padding-left: 30px;
+  }
 }
 
 @media only screen and (device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) {
   .notify-amount {
     margin-left: 78px !important;
+  }
+  .navbar-dark .navbar-brand {
+    padding-left: 30px;
   }
 }
 
@@ -48,17 +55,26 @@
   .notify-amount {
     margin-left: 78px !important;
   }
+  .navbar-dark .navbar-brand {
+    padding-left: 30px;
+  }
 }
 
 @media only screen and (device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) {
   .notify-amount {
     margin-left: 78px !important;
   }
+  .navbar-dark .navbar-brand {
+    padding-left: 30px;
+  }
 }
 
 @media only screen and (device-width: 390px) and (device-height: 844px) and (-webkit-device-pixel-ratio: 3) {
   .notify-amount {
     margin-left: 78px !important;
+  }
+  .navbar-dark .navbar-brand {
+    padding-left: 30px;
   }
 }
 
@@ -120,15 +136,23 @@
 }
 
 .nav-link {
-  color: rgba(255, 255, 255, 0.75);
-  font-size: 23px;
+  color: white;
+  font-size: 17px;
 }
 
 .dropdown-item {
   height: 40px;
-  font-size: 19px;
+  font-size: 17px;
+  text-align: center !important;
 }
 
 .notify-amount p {
   margin-top: -2px !important;
 };
+
+.navbar-dark .navbar-brand  {
+  color: red !important;
+  font-size: 30px !important;
+  margin-left: 30px !important;
+  margin-right: 1011px !important;
+}

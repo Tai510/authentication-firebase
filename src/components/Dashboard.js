@@ -4,43 +4,14 @@ import { useHistory } from "react-router-dom";
 import NavBar from "./Nav/NavBar";
 import Home from "./Home/Home";
 import Todo from "./Todo/Todo";
-import { db, auth } from "../firebase";
-import firebase from "firebase/app";
+// import { db, auth } from "../firebase";
+// import firebase from "firebase/app";
 
 export default function Dashboard() {
   const [error, setError] = useState("");
   const { currentUser, logout } = useAuth();
   const history = useHistory();
-  const [todos, setTodos] = useState([]);
-  const [input, setInput] = useState("");
-  const [notify, setNotify] = useState();
-
-  useEffect(() => {
-    db.collection(auth.currentUser.uid)
-      .orderBy("timestamp", "asc")
-      .onSnapshot((snapshot) => {
-        setTodos(
-          snapshot.docs.map((doc) => ({ id: doc.id, item: doc.data().item }))
-        );
-        setNotify(parseInt(todos.length));
-      });
-  }, [input, notify]);
-
-  // Todo Add Item
-  const addItem = (input) => {
-    db.collection(auth.currentUser.uid)
-      .add({
-        item: input,
-        timestamp: firebase.firestore.FieldValue.serverTimestamp(),
-      })
-      .catch((error) => {
-        alert(error.message);
-        console.log("Couldn't add item!");
-      });
-    setInput("");
-  };
-  ////////////////////////////////////////
-
+ 
   // LogOut Function
   async function handleLogout() {
     setError("");
@@ -56,9 +27,9 @@ export default function Dashboard() {
 
   return (
     <div>
-      <NavBar notify={notify} logout={handleLogout} />
+      <NavBar logout={handleLogout} />
       <Home email={currentUser.email} />
-      <Todo todo={input} todos={todos} addItem={addItem} notify={notify} />
+      {/* <Todo /> */}
     </div>
   );
 }

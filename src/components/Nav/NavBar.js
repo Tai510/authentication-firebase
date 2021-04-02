@@ -24,11 +24,8 @@ const NavBar = ({ logout, notify }) => {
         <Nav className="mr-auto">
           <NavDropdown title="My Folder" id="collasible-nav-dropdown">
             <NavDropdown.Item href="/update-profile">Account</NavDropdown.Item>
-            <NavDropdown.Item href="#planner">
+            <NavDropdown.Item href="/todos">
               Todo List{" "}
-              <div href="#planner" className="notify-amount">
-                <p>{notify}</p>
-              </div>
             </NavDropdown.Item>
             <NavDropdown.Item href="#action/3.3">TBA</NavDropdown.Item>
             <NavDropdown.Divider />
