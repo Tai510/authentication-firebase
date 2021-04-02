@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import TodoForm from "../Todo/TodoForm";
 import TodoList from "../Todo/TodoList";
 import "./Todo.css";
+import NavBar from '../Nav/NavBar';
 
 import { db, auth } from "../../firebase";
 import firebase from "firebase/app";
@@ -41,6 +42,7 @@ const Todo = () => {
 
   return (
     <div id="planner" className="Todo-App-Main">
+      <NavBar />
       <div className="Todo">
         <TodoForm todo={todos} addItem={addItem} />
         <div className="todo-list">

@@ -1,21 +1,18 @@
 import React, { useState } from "react";
+import { useAuth } from "../../contexts/AuthContext";
+import { useHistory } from "react-router-dom";
 import {
   Navbar,
   Nav,
   NavDropdown,
-  Form,
-  FormControl,
-  Button,
-  Dropdown,
-  DropdownButton,
 } from "react-bootstrap";
 import "./NavBar.css";
-import { RiHome3Line } from "react-icons/ri";
-import { RiNotification3Line } from "react-icons/ri";
-import { GrUserSettings } from "react-icons/gr";
-import Todo from "../../components/Todo/Todo";
 
-const NavBar = ({ logout, notify }) => {
+
+
+
+const NavBar = ({ logout }) => {
+  
   return (
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
       <Navbar.Brand href="/">LifeTracker</Navbar.Brand>

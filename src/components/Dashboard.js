@@ -4,8 +4,8 @@ import { useHistory } from "react-router-dom";
 import NavBar from "./Nav/NavBar";
 import Home from "./Home/Home";
 import Todo from "./Todo/Todo";
-// import { db, auth } from "../firebase";
-// import firebase from "firebase/app";
+import './Auth.css'
+
 
 export default function Dashboard() {
   const [error, setError] = useState("");
@@ -27,7 +27,9 @@ export default function Dashboard() {
 
   return (
     <div>
+      <div className='display-Nav'>
       <NavBar logout={handleLogout} />
+      </div>
       <Home email={currentUser.email} />
       {/* <Todo /> */}
     </div>

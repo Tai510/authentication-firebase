@@ -3,6 +3,7 @@ import { Form, Button, Card, Alert } from "react-bootstrap";
 import { useAuth } from "../contexts/AuthContext";
 import { Link, useHistory } from "react-router-dom";
 import './Auth.css';
+import NavBar from './Nav/NavBar';
 
 export default function UpdateProfile() {
   const emailRef = useRef();
@@ -44,6 +45,7 @@ export default function UpdateProfile() {
 
   return (
     <>
+    <NavBar />
       <Card id='Register-Forms'>
         <Card.Body>
           <h2 className="text-center mb-4">Update Profile</h2>

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Signup from "./Signup";
 import { Container } from "react-bootstrap";
 import { AuthProvider } from "../contexts/AuthContext";
@@ -9,7 +9,7 @@ import PrivateRoute from "./PrivateRoute";
 import ForgotPassword from "./ForgotPassword";
 import UpdateProfile from "./UpdateProfile";
 import Todo from '../components/Todo/Todo';
-import Footer from '../components/Footer/Footer';
+import Calculator from './Calculator/Calculator';
 
 function App() {
   
@@ -26,7 +26,7 @@ function App() {
               <Route path="/forgot-password" component={ForgotPassword} />
               <Route path='/todos' component={Todo} />
             </Switch>
-            <Footer />
+            {/* <Calculator /> */}
           </AuthProvider>
         </Router>
       </div>
