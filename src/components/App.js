@@ -8,7 +8,8 @@ import Login from "./Login";
 import PrivateRoute from "./PrivateRoute";
 import ForgotPassword from "./ForgotPassword";
 import UpdateProfile from "./UpdateProfile";
-import Todo from '../components/Todo/Todo'
+import Todo from '../components/Todo/Todo';
+import Footer from '../components/Footer/Footer';
 
 function App() {
   
@@ -25,6 +26,7 @@ function App() {
               <Route path="/forgot-password" component={ForgotPassword} />
               <Route path='/todo' component={Todo} />
             </Switch>
+            <Footer />
           </AuthProvider>
         </Router>
       </div>

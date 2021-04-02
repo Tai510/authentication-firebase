@@ -15,8 +15,6 @@ export default function Dashboard() {
   const [input, setInput] = useState("");
   const [notify, setNotify] = useState();
 
-
-
   useEffect(() => {
     db.collection(auth.currentUser.uid)
       .orderBy("timestamp", "asc")
@@ -28,6 +26,7 @@ export default function Dashboard() {
       });
   }, [input, notify]);
 
+  // Todo Add Item
   const addItem = (input) => {
     db.collection(auth.currentUser.uid)
       .add({
@@ -40,7 +39,9 @@ export default function Dashboard() {
       });
     setInput("");
   };
+  ////////////////////////////////////////
 
+  // LogOut Function
   async function handleLogout() {
     setError("");
 
@@ -51,12 +52,13 @@ export default function Dashboard() {
       setError("Failed to log out");
     }
   }
+  ////////////////////////////////////////////
 
   return (
     <div>
       <NavBar notify={notify} logout={handleLogout} />
       <Home email={currentUser.email} />
-      <Todo todo={input} todos={todos} addItem={addItem} />
+      <Todo todo={input} todos={todos} addItem={addItem} notify={notify} />
     </div>
   );
 }

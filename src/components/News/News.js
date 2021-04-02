@@ -8,9 +8,8 @@ const News = () => {
   const NewsUrl = process.env.REACT_APP_NEWS_URL;
 
   useEffect(() => {
-    getNews();
     const interval = setInterval(() => {
-      getNews();
+      // getNews();
     }, 15000);
     return () => clearInterval(interval);
   }, []);

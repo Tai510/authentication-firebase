@@ -86,10 +86,10 @@
 }
 
 #delete-button {
-  border: 1px solid #fff;
+  border: none;
   outline: none;
   border-radius: 50%;
-  background: #fff;
+  background: transparent;
 }
 
 #delete-button i {

@@ -11,7 +11,7 @@ import { FaYoutube } from "react-icons/fa";
 import { ImFacebook } from "react-icons/im";
 import Weather from "../Weather/Weather";
 import News from "../News/News";
-import { AiOutlineStock } from "react-icons/ai";
+import { FaCommentDollar } from "react-icons/fa";
 import axios from 'axios'
 
 const Home = ({ email }) => {
@@ -26,11 +26,11 @@ const Home = ({ email }) => {
   
   function greetUser() {
     if (hours >= 18) {
-      setGreeting("Good evening");
+      setGreeting("Good Evening!");
     } else if (hours >= 12) {
-      setGreeting("Good afternoon");
+      setGreeting("Good Afternoon!");
     } else if (hours >= 0) {
-      setGreeting("Good morning");
+      setGreeting("Good Morning!");
     }
   }
 
@@ -138,7 +138,7 @@ const Home = ({ email }) => {
                 href="https://www.marketwatch.com/investing/stock/live"
               >
                 <div className="Stocks">
-                  <AiOutlineStock />
+                <i class="fas fa-hand-holding-usd"></i>
                 </div>
               </a>
             </div>

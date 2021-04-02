@@ -4,7 +4,7 @@
   background-image: url("https://i.pinimg.com/originals/de/1d/df/de1ddf9ee30e08e15460626b919ef87e.jpg");
   background-size: cover;
   background-repeat: no-repeat;
-  height: 730px;
+  height: 716px;
 }
 
 .right-section-home {
@@ -16,10 +16,12 @@
 
 .second-row-home {
   display: flex;
+  justify-content: space-between;
 }
 
 .third-row-home {
   display: flex;
+  justify-content: space-between;
 }
 
 .food-home {
@@ -147,8 +149,55 @@
   height: 100px;
   color: #fff;
   font-size: 50px;
-  padding-left: 22px;
+  /* padding-left: 22px; */
+  text-align: center;
 }
+
+/* iphone 12 MQ */
+@media only screen and (device-width: 390px) and (device-height: 844px) and (-webkit-device-pixel-ratio: 3) {
+  .Stocks {
+    margin-left: -25px !important;
+    width: 150px !important;
+  }
+  .mail-home {
+    width: 150px !important;
+    padding-left: 50px !important;
+    padding-top: 7px;
+  }
+  .food-home {
+    width: 150px !important;
+    padding-left: 50px !important;
+    padding-top: 7px;
+  }
+  .social-1 {
+    width: 150px !important;
+  }
+  .social-2 {
+    width: 150px !important;
+  }
+
+  .Facebook {
+    width: 70px !important;
+    padding-left: 23px !important;
+    padding-top: 3px;
+  }
+  .Amazon {
+    width: 70px !important;
+    padding-left: 23px !important;
+    padding-top: 3px;
+  }
+  .Youtube {
+    width: 70px !important;
+    padding-left: 23px !important;
+    padding-top: 3px;
+  }
+  .Netflix {
+    width: 70px !important;
+    padding-left: 23px !important;
+    padding-top: 3px;
+  }
+}
+/* iphone 12 MQ */
 
 .Stocks:hover {
   background: white;
@@ -165,9 +214,12 @@
   height: 100px;
   margin-top: 5px;
   margin-left: 10px;
-  /* border: 1px solid #fff; */
+  border: 1px solid #fff;
   background: cadetblue;
   cursor: pointer;
+  background-image: url("https://images.squarespace-cdn.com/content/v1/53fe4a70e4b0a2293ab0e42a/1574228768916-84LG83EIQWTA4NJCEZWN/ke17ZwdGBToddI8pDm48kB6TyTNFFOu6ZnxzUwSZ5ccUqsxRUqqbr1mOJYKfIPR7LoDQ9mXPOjoJoqy81S2I8N_N4V1vUb5AoIIIbLZhVYxCRW4BPu10St3TBAUQYVKczAYltkiGRKUqljXc73d3GCgRO6iVRS3nJS34y1MDqiTWHMYyaHCxWxITEWchwfN-/image-asset.gif");
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .profile-div {
@@ -270,24 +322,29 @@ img {
   }
   .food-home {
     width: 125px !important;
-    padding-left: 34px !important;
+    padding-left: 36px !important;
     padding-top: 7px;
   }
   .mail-home {
     width: 125px !important;
-    margin-left: 11px !important;
-    padding-left: 34px !important;
+    padding-left: 36px !important;
     padding-top: 7px;
   }
   .Stocks {
-    width: 125px !important;
-    padding-left: 34px !important;
+    margin-right: 11px !important;
+    padding-left: 36px !important;
     padding-top: 7px;
+    border: none;
+  }
+
+  .Stocks i {
+    display: none !important;
   }
   .stocks {
-    width: 125px !important;
+    width: 150px !important;
     margin-left: 36px !important;
-    border: 0px solid white !important;
+    border: 1px solid white !important;
+    text-align: center;
   }
   .Facebook {
     width: 55px !important;
@@ -354,11 +411,12 @@ img {
     width: 145px !important;
     padding-left: 47px !important;
     padding-top: 7px;
+    display: none !important;
   }
   .stocks {
     width: 145px !important;
     margin-left: 64px !important;
-    border: 0px solid white !important;
+    border: 1px solid white !important;
   }
   .Facebook {
     width: 70px !important;
@@ -412,7 +470,7 @@ img {
   .stocks {
     width: 165px !important;
     margin-left: 80px !important;
-    border: 0px solid white !important;
+    border: 1px solid white !important;
   }
   .Facebook {
     width: 80px !important;
@@ -441,7 +499,6 @@ img {
     width: 165px !important;
   }
   .social-media {
-    border: 1px solid pink;
     width: 90% !important;
     margin: auto;
   }
@@ -467,7 +524,7 @@ img {
   .stocks {
     width: 140px !important;
     margin-left: 70px !important;
-    border: 0px solid white !important;
+    border: 1px solid white !important;
   }
   .Facebook {
     width: 65px !important;
@@ -496,7 +553,6 @@ img {
     width: 140px !important;
   }
   .social-media {
-    border: 1px solid pink;
     width: 90% !important;
     margin: auto;
   }
