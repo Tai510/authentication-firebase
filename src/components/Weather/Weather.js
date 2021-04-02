@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./Weather.css";
 import WeatherInfo from "./WeatherInfo";
-import axios from 'axios'
 
 require("dotenv").config();
 
@@ -17,7 +16,7 @@ const Weather = () => {
 
   useEffect(() => {
     // getLocation();
-    // getWeather();
+    getWeather();
   }, [query]);
 
   // const getLocation = () => {
@@ -44,22 +43,22 @@ const Weather = () => {
     setInfo(data);
     console.log("info...", info);
 
-    const temperature = data.current.temperature;
-    setTemperatures(temperature);
-    const fahrenheit = Math.floor((temperature * 9) / 5 + 32);
-    setFahrenheits(fahrenheit);
-    const location = data.location.name;
-    setLocations(location);
-    const description = data.current.weather_descriptions[0];
-    setDescriptions(description);
+    // const temperature = data.current.temperature;
+    // setTemperatures(temperature);
+    // const fahrenheit = Math.floor((temperature * 9) / 5 + 32);
+    // setFahrenheits(fahrenheit);
+    // const location = data.location.name;
+    // setLocations(location);
+    // const description = data.current.weather_descriptions[0];
+    // setDescriptions(description);
   };
   return (
     <div>
       <WeatherInfo
-        location={locations}
-        temperature={temperatures}
-        fahrenheit={fahrenheits}
-        description={descriptions}
+        // location={locations}
+        // temperature={temperatures}
+        // fahrenheit={fahrenheits}
+        // description={descriptions}
       />
     </div>
   );

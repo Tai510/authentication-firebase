@@ -9,7 +9,7 @@ const News = () => {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      // getNews();
+      getNews();
     }, 15000);
     return () => clearInterval(interval);
   }, []);

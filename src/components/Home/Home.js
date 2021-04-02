@@ -11,8 +11,6 @@ import { FaYoutube } from "react-icons/fa";
 import { ImFacebook } from "react-icons/im";
 import Weather from "../Weather/Weather";
 import News from "../News/News";
-import { FaCommentDollar } from "react-icons/fa";
-import axios from 'axios'
 
 const Home = ({ email }) => {
   // Date
@@ -26,11 +24,11 @@ const Home = ({ email }) => {
   
   function greetUser() {
     if (hours >= 18) {
-      setGreeting("Good Evening!");
+      setGreeting("Good Evening !");
     } else if (hours >= 12) {
-      setGreeting("Good Afternoon!");
+      setGreeting("Good Afternoon !");
     } else if (hours >= 0) {
-      setGreeting("Good Morning!");
+      setGreeting("Good Morning !");
     }
   }
 
