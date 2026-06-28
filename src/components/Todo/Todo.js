@@ -2,16 +2,15 @@ import React, { useState, useEffect } from "react";
 import TodoForm from "../Todo/TodoForm";
 import TodoList from "../Todo/TodoList";
 import "./Todo.css";
-import NavBar from '../Nav/NavBar';
+import NavBar from "../Nav/NavBar";
 
 import { db, auth } from "../../firebase";
 import firebase from "firebase/app";
 
-
 const Todo = () => {
   const [todos, setTodos] = useState([]);
   const [input, setInput] = useState("");
-  const [notify, setNotify] = useState();
+  const [notify, setNotify] = useState(0);
 
   useEffect(() => {
     db.collection(auth.currentUser.uid)
@@ -22,7 +21,7 @@ const Todo = () => {
         );
         setNotify(parseInt(todos.length));
       });
-  }, [input, notify]);
+  }, [input]);
 
   // Todo Add Item
   const addItem = (input) => {
@@ -38,13 +37,12 @@ const Todo = () => {
     setInput("");
   };
   ////////////////////////////////////////
-  
 
   return (
     <div id="planner" className="Todo-App-Main">
-      <NavBar />
+      {/* <NavBar /> */}
       <div className="Todo">
-        <TodoForm todo={todos} addItem={addItem} />
+        <TodoForm addItem={addItem} />
         <div className="todo-list">
           <TodoList todos={todos} />
         </div>

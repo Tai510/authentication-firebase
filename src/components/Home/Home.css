@@ -7,6 +7,15 @@
   height: 716px;
 }
 
+.Greeting {
+  display: flex;
+  flex-direction: column;
+}
+
+.progress {
+  width: 150px !important;
+}
+
 .right-section-home {
   margin-right: 30px;
   width: 212px;
@@ -25,14 +34,56 @@
 }
 
 .food-home {
-  background: #e72011;
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+
   border: 1px solid #fff;
   width: 100px;
   height: 100px;
   color: #fff;
   font-size: 50px;
   padding-left: 22px;
+  background-image: url('https://cdn.dribbble.com/users/218750/screenshots/2781808/_food.gif') !important;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  color: rgb(128, 100, 100);
 }
+
+.food-home .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -60px;
+  opacity: 0;
+  transition: opacity 0.3s;
+  font-size: 15px;
+}
+
+.food-home .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+.food-home:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+
 
 .food-home:hover {
   background: white;
@@ -40,6 +91,10 @@
 }
 
 .mail-home {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+
   background: hsl(164deg 54% 55%);
   border: 1px solid #fff;
   margin-left: 10px;
@@ -49,6 +104,44 @@
   padding-top: 5px;
   width: 100px;
   height: 100px;
+  background-image: url('https://s3.amazonaws.com/images.seroundtable.com/google-logo-with-mask-1595171977.gif') !important;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  
+}
+
+.mail-home .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -60px;
+  opacity: 0;
+  transition: opacity 0.3s;
+  font-size: 15px;
+}
+
+.mail-home .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+.mail-home:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
 }
 
 .mail-home:hover {
@@ -68,12 +161,55 @@
 }
 
 .Facebook {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+
   background: #fff;
   width: 48px;
   height: 48px;
   margin-top: 5px;
   border: 1px solid #fff;
   padding-left: 10px;
+  background-image: url('https://media4.giphy.com/media/l41lX2yEwhnD6QrLi/giphy.gif') !important;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  color: white;
+  
+}
+
+.Facebook .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -60px;
+  opacity: 0;
+  transition: opacity 0.3s;
+  font-size: 15px;
+}
+
+.Facebook .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+.Facebook:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
 }
 
 .Facebook:hover {
@@ -87,12 +223,55 @@
 }
 
 .Amazon {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+
   background: #f90;
   width: 48px;
   height: 48px;
   margin-top: 5px;
   border: 1px solid #fff;
   padding-left: 10px;
+  background-image: url('https://i.pinimg.com/originals/05/ad/01/05ad014d19ae8d573b5c00bb93f25616.gif') !important;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  color: black !important;
+
+}
+
+.Amazon .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -60px;
+  opacity: 0;
+  transition: opacity 0.3s;
+  font-size: 15px;
+}
+
+.Amazon .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+.Amazon:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
 }
 
 .Amazon:hover {
@@ -106,12 +285,53 @@
 }
 
 .Netflix {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+
   background: #e50914;
   width: 48px;
   height: 48px;
   margin-top: 4px;
   border: 1px solid #fff;
   padding-left: 10px;
+  background-image: url('https://i.pinimg.com/originals/10/2c/55/102c55955c640d2fc02af4fd89bafbee.gif') !important;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+}
+
+.Netflix .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -60px;
+  opacity: 0;
+  transition: opacity 0.3s;
+  font-size: 15px;
+}
+
+.Netflix .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+.Netflix:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
 }
 
 .Netflix:hover {
@@ -125,12 +345,53 @@
 }
 
 .Youtube {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+
   background: #fff;
   width: 48px;
   height: 48px;
   margin-top: 4px;
   border: 1px solid #fff;
   padding-left: 10px;
+  background-image: url('https://media1.giphy.com/media/13Nc3xlO1kGg3S/giphy.gif') !important;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+}
+
+.Youtube .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -60px;
+  opacity: 0;
+  transition: opacity 0.3s;
+  font-size: 15px;
+}
+
+.Youtube .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+.Youtube:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
 }
 
 .Youtube:hover {
@@ -143,22 +404,260 @@
   color: #c4302b;
 }
 
-.Stocks {
+.Basketball {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+
+  background: #fff;
+  width: 48px;
+  height: 48px;
+  margin-top: 5px;
   border: 1px solid #fff;
-  width: 100px;
-  height: 100px;
+  padding-left: 10px;
+  background-image: url('https://cdn.dribbble.com/users/364516/screenshots/3509175/nba.gif') !important;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  color: white;
+  
+}
+
+.Basketball .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: #555;
   color: #fff;
-  font-size: 50px;
-  /* padding-left: 22px; */
   text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -60px;
+  opacity: 0;
+  transition: opacity 0.3s;
+  font-size: 15px;
+}
+
+.Basketball .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+.Basketball:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+
+.Basketball:hover {
+  background: #3b5998;
+  color: white;
+}
+
+#Basketball {
+  font-size: 25px;
+  color: #3b5998;
+}
+
+.Soccer {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+
+  background: #fff;
+  width: 48px;
+  height: 48px;
+  margin-top: 5px;
+  border: 1px solid #fff;
+  padding-left: 10px;
+  background-image: url('https://media2.giphy.com/media/QZyOqV4p9DbGTh6jEm/200.gif') !important;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  color: white;
+  
+}
+
+.Soccer .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -60px;
+  opacity: 0;
+  transition: opacity 0.3s;
+  font-size: 15px;
+}
+
+.Soccer .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+.Soccer:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+
+.Soccer:hover {
+  background: #3b5998;
+  color: white;
+}
+
+#Soccer {
+  font-size: 25px;
+  color: #3b5998;
+}
+
+.Football {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+
+  background: #fff;
+  width: 48px;
+  height: 48px;
+  margin-top: -6px;
+  border: 1px solid #fff;
+  padding-left: 10px;
+  background-image: url('https://media2.giphy.com/media/cQBhRosP3tzIyCfIHj/giphy.gif') !important;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  color: white;
+  
+}
+
+.Football .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -60px;
+  opacity: 0;
+  transition: opacity 0.3s;
+  font-size: 15px;
+}
+
+.Football .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+.Football:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+
+.Football:hover {
+  background: #3b5998;
+  color: white;
+}
+
+#Football {
+  font-size: 25px;
+  color: #3b5998;
+}
+
+.Stocks{
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+
+  background: #fff;
+  width: 48px;
+  height: 48px;
+  margin-top: -6px;
+  border: 1px solid #fff;
+  padding-left: 10px;
+  background-image: url('https://thumbs.gfycat.com/EuphoricIcyAmericanshorthair-size_restricted.gif') !important;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  color: white;
+  
+}
+
+.Stocks .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -60px;
+  opacity: 0;
+  transition: opacity 0.3s;
+  font-size: 15px;
+}
+
+.Stocks .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+.Stocks:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+
+.Stocks:hover {
+  background: #3b5998;
+  color: white;
+}
+
+#Stocks {
+  font-size: 25px;
+  color: #3b5998;
 }
 
 /* iphone 12 MQ */
 @media only screen and (device-width: 390px) and (device-height: 844px) and (-webkit-device-pixel-ratio: 3) {
-  .Stocks {
+  /* .Stocks {
     margin-left: -25px !important;
     width: 125px !important;
-  }
+  } */
   .mail-home {
     width: 125px !important;
     padding-left: 50px !important;
@@ -197,12 +696,8 @@
     padding-top: 3px;
   }
 }
-/* iphone 12 MQ */
 
-.Stocks:hover {
-  background: white;
-  color: cadetblue;
-}
+/* iphone 12 MQ end */
 
 #Stocks {
   font-size: 25px;
@@ -271,6 +766,7 @@ img {
   .Home {
     flex-direction: column;
     height: 100% !important;
+    padding-bottom: 50px;
   }
   .profile-div {
     width: 90% !important;
@@ -285,6 +781,7 @@ img {
     width: 90% !important;
     margin: auto !important;
     margin-bottom: 10px !important;
+    margin-top: 20px !important;
   }
   .News {
     width: 90% !important;
@@ -316,17 +813,20 @@ img {
   }
   .right-section-home {
     width: 100% !important;
+    margin-top: 0px;
   }
   .second-row-home {
     width: 100% !important;
   }
   .food-home {
     width: 125px !important;
+    height: 125px !important;
     padding-left: 36px !important;
     padding-top: 7px;
   }
   .mail-home {
     width: 125px !important;
+    height: 125px !important;
     padding-left: 36px !important;
     padding-top: 7px;
   }
@@ -342,27 +842,32 @@ img {
   }
   .stocks {
     width: 125px !important;
+    height: 125px !important;
     margin-left: 36px !important;
     border: 1px solid white !important;
     text-align: center;
   }
   .Facebook {
-    width: 55px !important;
+    width: 60px !important;
+    height: 60px !important;
     padding-left: 14px !important;
     padding-top: 3px;
   }
   .Amazon {
-    width: 55px !important;
+    width: 60px !important;
+    height: 60px !important;
     padding-left: 14px !important;
     padding-top: 3px;
   }
   .Netflix {
-    width: 55px !important;
+    width: 60px !important;
+    height: 60px !important;
     padding-left: 14px !important;
     padding-top: 3px;
   }
   .Youtube {
-    width: 55px !important;
+    width: 60px !important;
+    height: 60px !important;
     padding-left: 14px !important;
     padding-top: 3px;
   }
@@ -398,43 +903,51 @@ img {
 @media only screen and (device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) {
   .food-home {
     width: 145px !important;
+    height: 145px !important;
     padding-left: 47px !important;
     padding-top: 7px;
   }
   .mail-home {
     width: 145px !important;
+    height: 145px !important;
     margin-left: 19px !important;
     padding-left: 47px !important;
     padding-top: 7px;
   }
   .Stocks {
     width: 145px !important;
+    height: 145px !important;
     padding-left: 47px !important;
     padding-top: 7px;
     display: none !important;
   }
   .stocks {
     width: 145px !important;
+    height: 145px !important;
     margin-left: 64px !important;
     border: 1px solid white !important;
   }
   .Facebook {
     width: 70px !important;
+    height: 70px !important;
     padding-left: 22px !important;
     padding-top: 3px;
   }
   .Amazon {
     width: 70px !important;
+    height: 70px !important;
     padding-left: 22px !important;
     padding-top: 3px;
   }
   .Netflix {
     width: 70px !important;
+    height: 70px !important;
     padding-left: 22px !important;
     padding-top: 3px;
   }
   .Youtube {
     width: 70px !important;
+    height: 70px !important;
     padding-left: 22px !important;
     padding-top: 3px;
   }
@@ -447,48 +960,59 @@ img {
   .social-media {
     width: 90% !important;
     margin: auto;
+  }
+  .Home {
+    padding-bottom: 80px;
   }
 }
 
 @media only screen and (device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) {
   .food-home {
     width: 165px !important;
+    height: 165px !important;
     padding-left: 57px !important;
     padding-top: 7px;
   }
   .mail-home {
     width: 165px !important;
+    height: 165px !important;
     margin-left: 15px !important;
     padding-left: 57px !important;
     padding-top: 7px;
   }
   .Stocks {
     width: 165px !important;
+    height: 165px !important;
     padding-left: 57px !important;
     padding-top: 7px;
   }
   .stocks {
     width: 165px !important;
+    height: 165px !important;
     margin-left: 80px !important;
     border: 1px solid white !important;
   }
   .Facebook {
     width: 80px !important;
+    height: 80px !important;
     padding-left: 29px !important;
     padding-top: 3px;
   }
   .Amazon {
     width: 80px !important;
+    height: 80px !important;
     padding-left: 29px !important;
     padding-top: 3px;
   }
   .Netflix {
     width: 80px !important;
+    height: 80px !important;
     padding-left: 29px !important;
     padding-top: 3px;
   }
   .Youtube {
     width: 80px !important;
+    height: 80px !important;
     padding-left: 29px !important;
     padding-top: 3px;
   }
@@ -501,6 +1025,9 @@ img {
   .social-media {
     width: 90% !important;
     margin: auto;
+  }
+  .Home {
+    padding-bottom: 120px;
   }
 }
 

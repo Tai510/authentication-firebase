@@ -2,64 +2,64 @@ import React, { useState, useEffect } from "react";
 import "./Weather.css";
 import WeatherInfo from "./WeatherInfo";
 
-require("dotenv").config();
-
 const Weather = () => {
-  const [info, setInfo] = useState([]);
-  const [query, setQuery] = useState('Sonoma');
-  const [temperatures, setTemperatures] = useState([]);
-  const [descriptions, setDescriptions] = useState([]);
-  const [fahrenheits, setFahrenheits] = useState([]);
-  const [locations, setLocations] = useState([]);
+  // 1. State
+  const [town, setTown] = useState("");
+  const [error, setError] = useState("");
 
-  // const [town, setTown] = useState();
+  // 2. API keys
+  const geoKey = process.env.REACT_APP_GEO_API;
 
+  // 3. Run when component first loads
   useEffect(() => {
-    // getLocation();
-    getWeather();
-  }, [query]);
+    getLocation();
+  }, []);
 
-  // const getLocation = () => {
-  //   navigator.geolocation.getCurrentPosition(function (position) {
-  //     const { latitude, longitude } = position.coords;
-  //     fetch(
-  //       `https://api.opencagedata.com/geocode/v1/json?q=${latitude}+${longitude}&key=${process.env.REACT_APP_GEO_API}`
-  //     )
-  //       .then((res) => res.json())
-  //       .then((data) => {
-  //         const city = [];
-  //         city.push(data.results[0].components.town);
-  //         setTown(city[0]);
-  //         console.log("Town", town);
-  //       });
-  //   });
-  // };
+  // 4. Get user's current location
+  const getLocation = () => {
+    navigator.geolocation.getCurrentPosition(
+      function (position) {
+        const { latitude, longitude } = position.coords;
 
-  const getWeather = async () => {
-    const response = await fetch(
-      `http://api.weatherstack.com/current?access_key=cf3faa22250a94532c402637c18e357f&query=${query}`
+        fetch(
+          `https://api.opencagedata.com/geocode/v1/json?q=${latitude}+${longitude}&key=${geoKey}`
+        )
+          .then((res) => res.json())
+          .then((data) => {
+            console.log("Location data:", data);
+
+            const components = data.results?.[0]?.components;
+
+            let city =
+              components?.city ||
+              components?.town ||
+              components?.village ||
+              components?.municipality ||
+              components?.hamlet ||
+              components?.county;
+
+            if (city === "El Verano") {
+              city = "Sonoma";
+            }
+
+            const state = components?.state;
+
+            setTown(`${city}, ${state}`);
+          });
+      },
+      function (error) {
+        console.log("Location error:", error);
+        setError("Unable to get your location.");
+      }
     );
-    const data = await response.json();
-    setInfo(data);
-    console.log("info...", info);
-
-    // const temperature = data.current.temperature;
-    // setTemperatures(temperature);
-    // const fahrenheit = Math.floor((temperature * 9) / 5 + 32);
-    // setFahrenheits(fahrenheit);
-    // const location = data.location.name;
-    // setLocations(location);
-    // const description = data.current.weather_descriptions[0];
-    // setDescriptions(description);
   };
+
+  // 5. What shows on the page
   return (
     <div>
-      <WeatherInfo
-        // location={locations}
-        // temperature={temperatures}
-        // fahrenheit={fahrenheits}
-        // description={descriptions}
-      />
+      {error && <p>{error}</p>}
+
+      <WeatherInfo town={town} />
     </div>
   );
 };

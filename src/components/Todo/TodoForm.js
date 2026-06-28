@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./Todo.css";
 
-const TodoForm = ({ todo, addItem }) => {
+const TodoForm = ({ addItem }) => {
   const [item, setItem] = useState("");
 
   const handleSubmit = (e) => {

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Signup from "./Signup";
 import { Container } from "react-bootstrap";
 import { AuthProvider } from "../contexts/AuthContext";
@@ -8,28 +8,25 @@ import Login from "./Login";
 import PrivateRoute from "./PrivateRoute";
 import ForgotPassword from "./ForgotPassword";
 import UpdateProfile from "./UpdateProfile";
-import Todo from '../components/Todo/Todo';
-import Calculator from './Calculator/Calculator';
+import Todo from "../components/Todo/Todo";
+import NavBar from "../components/Nav/NavBar";
 
 function App() {
-  
   return (
     <Container>
-      <div>
         <Router>
           <AuthProvider>
+            <NavBar />
             <Switch>
               <PrivateRoute exact path="/" component={Dashboard} />
               <PrivateRoute path="/update-profile" component={UpdateProfile} />
+              <PrivateRoute path="/todos" component={Todo} />
               <Route path="/signup" component={Signup} />
               <Route path="/login" component={Login} />
               <Route path="/forgot-password" component={ForgotPassword} />
-              <Route path='/todos' component={Todo} />
             </Switch>
-            {/* <Calculator /> */}
           </AuthProvider>
         </Router>
-      </div>
     </Container>
   );
 }

@@ -5,6 +5,10 @@ import { Link, useHistory } from "react-router-dom";
 import "./Auth.css";
 
 export default function Signup() {
+  const [info, setInfo] = useState([]);
+  const [input, setInput] = useState("");
+
+  const nameRef = useRef();
   const emailRef = useRef();
   const passwordRef = useRef();
   const passwordConfirmRef = useRef();

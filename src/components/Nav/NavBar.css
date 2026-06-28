@@ -38,7 +38,12 @@
   }
 
   .navbar-dark .navbar-brand {
-    padding-left: 30px;
+    font-size: 20px !important;
+    margin: auto !important;
+  }
+
+  .navbar-dark .navbar-toggler {
+    margin-left: 10px !important;
   }
 }
 
@@ -63,9 +68,6 @@
 @media only screen and (device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) {
   .notify-amount {
     margin-left: 78px !important;
-  }
-  .navbar-dark .navbar-brand {
-    padding-left: 30px;
   }
 }
 
@@ -112,6 +114,12 @@
     padding-left: 6px !important;
     padding-top: 0px !important;
   }
+  .navbar-brand {
+    color: white !important;
+    font-size: 30px !important;
+    margin-left: 30px !important;
+    margin-right: 1011px !important;
+  }
 }
 
 .dropdown-settings .dropdown-menu {
@@ -128,7 +136,6 @@
   color: black;
   text-align: left;
   list-style: none;
-  background-color: white;
   background-clip: padding-box;
   border: 1px solid rgba(0, 0, 0, 0.15);
   border-radius: 0.25rem;
@@ -138,21 +145,51 @@
 .nav-link {
   color: white;
   font-size: 17px;
+  text-align: center;
 }
 
 .dropdown-item {
   height: 40px;
   font-size: 17px;
   text-align: center !important;
+  padding-top: 9px !important;
+}
+
+.dropdown-item.active {
+  color: white !important;
+}
+
+.dropdown-item a:hover {
+  color: black !important;
 }
 
 .notify-amount p {
   margin-top: -2px !important;
-};
+}
 
-.navbar-dark .navbar-brand  {
-  color: red !important;
+.navbar-brand {
+  color: white!important;
   font-size: 30px !important;
   margin-left: 30px !important;
-  margin-right: 1011px !important;
+  margin-right: 935px !important;
+  font-family: 'Dela Gothic One', cursive;
+}
+
+nav a {
+  color: white;
+}
+
+nav a:hover {
+  color: rgb(182, 174, 174);
+  outline: none;
+  text-decoration: none;
+}
+
+.mr-auto a {
+  color: black;
+}
+
+.mr-auto a:hover {
+  outline: none;
+  text-decoration: none;
 }
