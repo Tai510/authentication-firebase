@@ -23,6 +23,7 @@ const quotes = [
   "Certain things catch your eye, but pursue only those that capture the heart. – Ancient Indian Proverb",
   "Fall seven times and stand up eight. – Japanese Proverb",
   "Everything has beauty, but not everyone can see. – Confucius",
+  "Tai is the Best!!",
   "Life is not measured by the number of breaths we take, but by the moments that take our breath away. – Maya Angelou",
   "Happiness is not something readymade. It comes from your own actions. – Dalai Lama",
   "Too many of us are not living our dreams because we are living our fears. – Les Brown",
