@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import "./RandQuote.css";
-import { Link } from "react-router-dom";
 
 const colors = [
   "#FF5733",
@@ -31,14 +30,14 @@ const quotes = [
   "You can’t use up creativity. The more you use, the more you have. – Maya Angelou",
 ];
 
-const RandQuote = () => {
-  const getRandomItem = (array) => {
-    const randomIndex = Math.floor(Math.random() * array.length);
-    return array[randomIndex];
-  };
+const getRandomItem = (array) => {
+  const randomIndex = Math.floor(Math.random() * array.length);
+  return array[randomIndex];
+};
 
-  const [quote, setQuote] = useState(getRandomItem(quotes));
-  const [color, setColor] = useState(getRandomItem(colors));
+const RandQuote = () => {
+  const [quote, setQuote] = useState(() => getRandomItem(quotes));
+  const [color, setColor] = useState(() => getRandomItem(colors));
 
   const changeQuote = () => {
     setQuote(getRandomItem(quotes));
@@ -53,11 +52,9 @@ const RandQuote = () => {
 
   return (
     <div className="RandQuote">
-      <Link to="/">
-        <div id="tv" style={{ background: color }} onClick={changeQuote}>
-          <h1>{quote}</h1>
-        </div>
-      </Link>
+      <div id="tv" style={{ background: color }} onClick={changeQuote}>
+        <h1>{quote}</h1>
+      </div>
     </div>
   );
 };
