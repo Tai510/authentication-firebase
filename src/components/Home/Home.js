@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import MyCalendar from "../Calendar/Calendar";
 import "./Home.css";
+import Clock from "../Clock/Clock";
 import { IoIosRestaurant } from "react-icons/io";
 import { FaAmazon } from "react-icons/fa";
 import { ImFacebook } from "react-icons/im";
@@ -13,31 +14,43 @@ const Home = ({ email }) => {
   const [greeting, setGreeting] = useState("Welcome");
   const [notify, setNotify] = useState(0);
 
+  const updateGreeting = () => {
+  const hour = new Date().getHours();
+
+  if (hour >= 18) {
+    setGreeting("Good Evening ! 😄");
+  } else if (hour >= 12) {
+    setGreeting("Good Afternoon ! 😄");
+  } else {
+    setGreeting("Good Morning ! 😄");
+  }
+};
+
   useEffect(() => {
-    const hour = new Date().getHours();
+  updateGreeting();
 
-    if (hour >= 18) {
-      setGreeting("Good Evening ! 😄");
-    } else if (hour >= 12) {
-      setGreeting("Good Afternoon ! 😄");
-    } else {
-      setGreeting("Good Morning ! 😄");
-    }
+  const greetingInterval = setInterval(() => {
+    updateGreeting();
+  }, 60000);
 
-    const unsubscribe = db
-      .collection(auth.currentUser.uid)
-      .orderBy("timestamp", "asc")
-      .onSnapshot((snapshot) => {
-        setNotify(snapshot.docs.length);
-      });
+  const unsubscribe = db
+    .collection(auth.currentUser.uid)
+    .orderBy("timestamp", "asc")
+    .onSnapshot((snapshot) => {
+      setNotify(snapshot.docs.length);
+    });
 
-    return () => unsubscribe();
-  }, []);
+  return () => {
+    clearInterval(greetingInterval);
+    unsubscribe();
+  };
+}, []);
 
   return (
     <div className="Home">
       <div className="left-section-home">
         <MyCalendar greeting={greeting} />
+        <Clock />
         <Card notify={notify} />
       </div>
 
