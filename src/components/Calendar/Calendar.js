@@ -3,6 +3,7 @@ import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
 import "./Calendar.css";
 import { db, auth } from "../../firebase";
+import NotesPanel from "../NotesPanel/NotesPanel";
 
 const MyCalendar = ({ greeting }) => {
   const [date, setDate] = useState(new Date());
@@ -113,19 +114,13 @@ const deleteNote = () => {
         </h4>
       </div>
 
-      <div className="calendar-notes">
-        <textarea
-          placeholder="Write a note for this day..."
-          value={noteText}
-          onChange={(e) => setNoteText(e.target.value)}
-        />
-
-        <button onClick={saveNote}>Save Note</button>
-        {noteText && (
-  <button onClick={deleteNote}>Delete Note</button>
-)}
-        {savedMessage && <p className="saved-message">{savedMessage}</p>}
-      </div>
+      <NotesPanel
+  noteText={noteText}
+  setNoteText={setNoteText}
+  saveNote={saveNote}
+  deleteNote={deleteNote}
+  savedMessage={savedMessage}
+/>
     </div>
   );
 };
