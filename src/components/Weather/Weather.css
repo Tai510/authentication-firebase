@@ -1,67 +1,27 @@
 .weather-div {
-  border: 1px solid #fff;
-  text-align: center;
-  color: #cbccc5;
-  text-shadow: 1px 1px #3f3f3e;
-  height: 100px;
-  width: 210px;
-  margin-bottom: 5px;
-  font-family: Barlow Condensed, sans-serif;
-  /* background-image: url(https://images.unsplash.com/photo-1558138818-d44c4dea7a6a?auto=format&fit=crop&ixid=eyJhcHBfaWQiOjEyMDd9&ixlib=rb-1.2.1&q=60&w=800); */
-  background-size: cover;
-  background-repeat: no-repeat;
-  background: green;
+  width: 100%;
 }
 
-.weather-div h3 {
-  font-size: 40px;
-  margin-top: 20px;
-  font-weight: bolder;
+.weather-card-label {
+  margin: 0 0 10px;
+  font-size: 14px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #6b7280;
 }
 
-.weather-div h4 {
-  font-size: 25px;
-  margin: 5px 0 0 0;
-  line-height: 1.1;
-  white-space: normal;
-  font-weight: bolder;
+.weather-card-town {
+  margin: 0;
+  font-size: 32px;
+  color: #1f2937;
 }
 
-/* .temp h4 {
-  font-size: 42px;
-  padding-top: 10px;
-  font-weight: bold;
-} */
-
-.weather-div h5 {
-  font-size: 30px;
-  font-weight: bolder;
+.weather-current {
+  margin: 10px 0 20px;
 }
 
-/* .fahrenheit span {
-  font-size: 55px;
-} */
-
-/* .fahrenheit span p {
-  font-size: 28px;
-  font-weight: bolder;
-  margin-bottom: -22px;
-} */
-
-/* .fahrenheit span h4 {
-  font-size: 54px;
-  font-weight: bolder;
-  margin-top: -7px;
-} */
-
-.weather-div p {
-  font-size: 20px;
-  line-height: 1;
-  margin-bottom: 10px;
-}
-
-.temp h4.location-title {
-  font-size: 24px;
-  margin-top: 0px;
-  line-height: 1.2;
+.weather-current-temp {
+  font-size: 64px;
+  font-weight: 800;
+  color: #1f2937;
 }

@@ -1,19 +1,46 @@
 import React from "react";
 
-const WeatherInfo = ({location, fahrenheit, description ,town, state}) => {
+const WeatherInfo = ({ town, weather }) => {
+  const currentTemp = weather?.current?.temperature_2m;
+  const humidity = weather?.current?.relative_humidity_2m;
+  const wind = weather?.current?.wind_speed_10m;
+  const high = weather?.daily?.temperature_2m_max?.[0];
+  const low = weather?.daily?.temperature_2m_min?.[0];
 
   return (
     <div className="weather-div">
-      <div className="temp">
-        <h4 className="fahrenheit">
-          {/* {fahrenheit} */}
-          <span class='location text'>
-            {" "}
-            {/* °F */}
-            <p>You're in</p>
-            <span className="location text">{town}</span>
+      <h2 className="weather-title">Today's Weather</h2>
+
+      <p className="weather-town">📍 {town || "Finding your location..."}</p>
+
+      <div className="weather-current">
+        <span className="weather-current-temp">
+          {currentTemp ? Math.round(currentTemp) : "--"}°
+        </span>
+      </div>
+
+      <div className="weather-details">
+        <div className="weather-detail">
+          <span className="detail-label">High</span>
+          <span className="detail-value">{high ? Math.round(high) : "--"}°</span>
+        </div>
+
+        <div className="weather-detail">
+          <span className="detail-label">Low</span>
+          <span className="detail-value">{low ? Math.round(low) : "--"}°</span>
+        </div>
+
+        <div className="weather-detail">
+          <span className="detail-label">Humidity</span>
+          <span className="detail-value">{humidity || "--"}%</span>
+        </div>
+
+        <div className="weather-detail">
+          <span className="detail-label">Wind</span>
+          <span className="detail-value">
+            {wind ? Math.round(wind) : "--"} mph
           </span>
-        </h4>
+        </div>
       </div>
     </div>
   );
