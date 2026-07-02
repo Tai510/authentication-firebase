@@ -12,8 +12,6 @@ const TodoForm = ({ addItem }) => {
 
   return (
     <form onSubmit={handleSubmit} className="TodoForm">
-      <h2>Today's Tasks</h2>
-
       <div className="todo-input">
         <input
           placeholder="Add a new task..."

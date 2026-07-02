@@ -101,11 +101,18 @@
 }
 
 .dashboard-card {
-  background: rgba(255, 255, 255, 0.85);
-  border-radius: 18px;
-  padding: 20px;
-  min-height: 180px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+  background: rgba(255,255,255,0.82);
+  backdrop-filter: blur(18px);
+  border-radius: 22px;
+  padding: 24px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+  transition: all 0.25s ease;
+  border: 1px solid rgba(255,255,255,0.35);
+}
+
+.dashboard-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 40px rgba(0,0,0,0.12);
 }
 
 .large-card {
@@ -138,4 +145,21 @@
   .corner-name {
     font-size: 30px;
   }
+}
+
+.widget-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+.widget-header span {
+  font-size: 24px;
+}
+
+.widget-header h2 {
+  margin: 0;
+  font-size: 22px;
+  color: #1f2937;
 }

@@ -8,9 +8,12 @@ const News = () => {
   const NewsUrl = process.env.REACT_APP_NEWS_URL;
 
   useEffect(() => {
+    getNews();
+
     const interval = setInterval(() => {
-      // getNews();
-    }, 15000);
+      getNews();
+    }, 900000); // 15 minutes
+
     return () => clearInterval(interval);
   }, []);
 

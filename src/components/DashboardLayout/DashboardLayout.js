@@ -3,6 +3,8 @@ import "./DashboardLayout.css";
 import Weather from "../Weather/Weather";
 import Todo from "../Todo/Todo";
 import MyCalendar from "../Calendar/Calendar";
+import News from "../News/News";
+import RandQuote from "../RandQuote/RandQuote";
 
 function DashboardLayout() {
   const [showWelcome, setShowWelcome] = useState(true);
@@ -68,16 +70,35 @@ function DashboardLayout() {
 
         <main className="dashboard-grid">
           <section className="dashboard-card large-card">
+            <div className="widget-header">
+              <span>🌤️</span>
+              <h2>Weather</h2>
+            </div>
             <Weather />
           </section>
+
           <section className="dashboard-card">
+            <div className="widget-header">
+              <span>📅</span>
+              <h2>Calendar</h2>
+            </div>
             <MyCalendar />
           </section>
+
           <section className="dashboard-card">
+            <div className="widget-header">
+              <span>✅</span>
+              <h2>Tasks</h2>
+            </div>
             <Todo />
           </section>
           <section className="dashboard-card wide-card">
-            Quote / News goes here
+            <div className="widget-header">
+              <span>💬</span>
+              <h2>Daily Inspiration</h2>
+            </div>
+
+            <RandQuote />
           </section>
         </main>
       </div>

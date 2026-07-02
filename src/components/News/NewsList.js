@@ -1,26 +1,33 @@
 import React from "react";
 
 const NewsList = ({ news }) => {
+  if (!news || !news.title) {
+    return (
+      <div className="news-loading">
+        Loading today's news...
+      </div>
+    );
+  }
+
   return (
-    <div>
-      <div className="news-img-div">
-        <img src={news.urlToImage}></img>
-      </div>
-      <div className="news-details-div">
-        <p className="news-title">
-          {news.title}{" "}
-          <span>
-            <a
-              style={{ display: "table-cell" }}
-              target="_blank"
-              href={news.url}
-            >
-              (See Full Story)
-            </a>
-          </span>
-        </p>
-        <p className="news-description">{news.description}</p>
-      </div>
+    <div className="news-card">
+      <img
+        className="news-image"
+        src={news.urlToImage}
+        alt={news.title}
+      />
+
+      <h3>{news.title}</h3>
+
+      <p>{news.description}</p>
+
+      <a
+        href={news.url}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Read Full Story →
+      </a>
     </div>
   );
 };

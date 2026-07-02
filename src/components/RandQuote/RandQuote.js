@@ -37,11 +37,13 @@ const getRandomItem = (array) => {
 
 const RandQuote = () => {
   const [quote, setQuote] = useState(() => getRandomItem(quotes));
-  const [color, setColor] = useState(() => getRandomItem(colors));
+  const [color] = useState("#1f7a3f");
 
   const changeQuote = () => {
     setQuote(getRandomItem(quotes));
-    setColor(getRandomItem(colors));
+    const changeQuote = () => {
+      setQuote(getRandomItem(quotes));
+    };
   };
 
   useEffect(() => {

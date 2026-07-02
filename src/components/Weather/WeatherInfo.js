@@ -9,7 +9,7 @@ const WeatherInfo = ({ town, weather }) => {
 
   return (
     <div className="weather-div">
-      <h2 className="weather-title">Today's Weather</h2>
+      
 
       <p className="weather-town">📍 {town || "Finding your location..."}</p>
 
