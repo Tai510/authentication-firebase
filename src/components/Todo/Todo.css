@@ -1,102 +1,77 @@
 .Todo {
   width: 100%;
-  margin: auto;
-  background: #f7473c;
-  /* border: 15px solid #fff; */
+  background: transparent;
 }
 
 .TodoForm h2 {
-  text-align: center;
-  color: #fff;
-  margin-top: 20px;
-  font-family: Architects Daughter, cursive;
-  margin-bottom: 30px;
-  text-shadow: 1px 1px #000;
+  margin: 0 0 18px;
+  font-size: 26px;
+  font-weight: 700;
+  color: #1f2937;
 }
 
 .todo-input {
   display: flex;
-  justify-content: space-between;
-  width: 530px;
-  margin: auto;
+  gap: 10px;
+  width: 100%;
 }
 
 .todo-input input {
-  width: 350px;
-  height: 40px;
+  flex: 1;
+  height: 42px;
+  border: 1px solid #d1d5db;
+  border-radius: 12px;
+  padding: 0 14px;
   outline: none;
 }
 
-.todo-input input::placeholder {
-  font-family: Work Sans, sans-serif;
-  padding-left: 20px;
+.todo-input input:focus {
+  border-color: #1f7a3f;
 }
 
 #add-button {
-  width: 110px;
-  height: 40px;
-  background: #92ca75;
-  font-size: 20px;
-  font-family: Work Sans, sans-serif;
-  font-weight: bolder;
-  color: #fff;
-  margin-right: 10px;
-  margin-left: 10px;
-  border-radius: 5px;
-  border: 1px solid #dd5f5f; 
+  height: 42px;
+  border: none;
+  border-radius: 12px;
+  padding: 0 18px;
+  background: #1f7a3f;
+  color: white;
+  font-weight: 700;
 }
 
 .todo-list {
-  text-align: center;
-  height: 570px;
-  background: #fff;
-  margin: 27px auto auto;
-}
-
-.todo-list i {
-  cursor: pointer;
+  margin-top: 18px;
+  max-height: 260px;
+  overflow-y: auto;
 }
 
 .items {
-  font-size: 20px;
-  border: 1px solid #fff;
-  width: 100%;
-  height: 47px;
-  margin: auto;
-  border-radius: 1px;
-  text-align: start;
   display: flex;
   justify-content: space-between;
-  padding: 12px 30px;
-  font-family: Work Sans, sans-serif;
-  background: #f9f9f9;
-  cursor: pointer;
-  font-weight: bolder;
+  align-items: center;
+  margin-bottom: 8px;
+  padding: 12px 14px;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #1f2937;
 }
 
 .items:hover {
-  background: rgb(228, 216, 216);
-}
-
-#delete-button,
-#delete-button:hover {
-  width: 32px;
-  height: 32px;
-  margin-top: -5px !important;
+  background: #edf7ee;
 }
 
 #delete-button {
   border: none;
-  outline: none;
-  border-radius: 50%;
   background: transparent;
+  cursor: pointer;
 }
 
 #delete-button i {
-  color: #484848;
-  font-size: 17px;
+  color: #6b7280;
 }
 
 #delete-button i:hover {
-  color: red !important;
+  color: red;
 }

@@ -9,11 +9,10 @@ const TodoItem = (props) => {
 
   return (
     <div className="items">
-      <div /* className={`list ${complete}`} */>
-        <p>{props.item}</p>
-      </div>
+      <p>{props.item}</p>
+
       <button onClick={removeItem} id="delete-button">
-        <i class="fas fa-times"></i>{" "}
+        <i className="fas fa-times"></i>
       </button>
     </div>
   );

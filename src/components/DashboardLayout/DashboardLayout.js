@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import "./DashboardLayout.css";
 import Weather from "../Weather/Weather";
+import Todo from "../Todo/Todo";
+import MyCalendar from "../Calendar/Calendar";
 
 function DashboardLayout() {
   const [showWelcome, setShowWelcome] = useState(true);
@@ -68,8 +70,12 @@ function DashboardLayout() {
           <section className="dashboard-card large-card">
             <Weather />
           </section>
-          <section className="dashboard-card">Calendar goes here</section>
-          <section className="dashboard-card">Todo goes here</section>
+          <section className="dashboard-card">
+            <MyCalendar />
+          </section>
+          <section className="dashboard-card">
+            <Todo />
+          </section>
           <section className="dashboard-card wide-card">
             Quote / News goes here
           </section>

@@ -11,26 +11,22 @@ const TodoForm = ({ addItem }) => {
   };
 
   return (
-    <div>
-      <form onSubmit={handleSubmit} className="TodoForm">
-        <h2>
-          THINGS TO DO <i class="fas fa-clipboard-check"></i> <span></span>
-        </h2>
-        <div className="todo-input">
-          <input
-            placeholder="New Item..."
-            type="text"
-            value={item}
-            onChange={(e) => setItem(e.target.value)}
-          ></input>
-          <div className="todo-Button">
-            <button disabled={!item} id="add-button" type="submit" value="add item">
-              Add
-            </button>
-          </div>
-        </div>
-      </form>
-    </div>
+    <form onSubmit={handleSubmit} className="TodoForm">
+      <h2>Today's Tasks</h2>
+
+      <div className="todo-input">
+        <input
+          placeholder="Add a new task..."
+          type="text"
+          value={item}
+          onChange={(e) => setItem(e.target.value)}
+        />
+
+        <button disabled={!item} id="add-button" type="submit">
+          Add
+        </button>
+      </div>
+    </form>
   );
 };
 

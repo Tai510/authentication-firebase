@@ -1,195 +1,97 @@
-@media (min-width: 1200px) {
-  .container,
-  .container-lg,
-  .container-md,
-  .container-sm,
-  .container-xl {
-    max-width: 100% !important;
-  }
+.custom-navbar {
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(14px);
+  padding: 14px 30px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
 }
 
-@media (min-width: 1281px) {
-  .NavBar label {
-    display: none;
-  }
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 26px !important;
+  font-weight: 800;
+  color: #1f2937 !important;
 }
 
-@media only screen and (min-device-width: 320px) and (max-device-width: 568px) {
-  #nav-icons {
-    display: none !important;
-  }
-  .notify-amount {
-    margin-left: 78px !important;
-  }
-  .notify-amount p {
-    margin-top: -1;
-    margin-bottom: 1rem;
-    margin-left: -1px;
-  }
-  .navbar-light .navbar-nav .nav-link {
-    text-align: center;
-  }
-  .btn-outline-success {
-    color: #28a745;
-    border-color: #28a745;
-    margin: auto;
-    margin-top: 10px;
-    margin-bottom: 5px;
-  }
-
-  .navbar-dark .navbar-brand {
-    font-size: 20px !important;
-    margin: auto !important;
-  }
-
-  .navbar-dark .navbar-toggler {
-    margin-left: 10px !important;
-  }
+.brand-icon {
+  font-size: 24px;
 }
 
-@media only screen and (device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) {
-  .notify-amount {
-    margin-left: 78px !important;
-  }
-  .navbar-dark .navbar-brand {
-    padding-left: 30px;
-  }
+.custom-navbar .nav-link,
+.custom-navbar .dropdown-toggle {
+  color: #374151 !important;
+  font-size: 16px;
+  font-weight: 600;
+  margin-left: 18px;
 }
 
-@media only screen and (device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) {
-  .notify-amount {
-    margin-left: 78px !important;
-  }
-  .navbar-dark .navbar-brand {
-    padding-left: 30px;
-  }
+.custom-navbar .nav-link:hover,
+.custom-navbar .dropdown-toggle:hover {
+  color: #1f7a3f !important;
 }
 
-@media only screen and (device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) {
-  .notify-amount {
-    margin-left: 78px !important;
-  }
+.nav-left {
+  margin-left: 30px;
 }
 
-@media only screen and (device-width: 390px) and (device-height: 844px) and (-webkit-device-pixel-ratio: 3) {
-  .notify-amount {
-    margin-left: 78px !important;
-  }
-  .navbar-dark .navbar-brand {
-    padding-left: 30px;
-  }
+.nav-right {
+  margin-left: auto;
 }
 
-.notify-amount {
-  border: 1px solid #fff;
-  width: 26px !important;
-  height: 26px !important;
-  border-radius: 50%;
-  background: #e45252;
-  color: #fff;
-  margin-left: 77px;
-  margin-top: -33px;
-  padding-left: 6px;
+.signup-pill {
+  background: #1f7a3f;
+  color: white !important;
+  padding: 8px 18px !important;
+  border-radius: 999px;
 }
 
-.notification i {
-  font-size: 20px;
-  margin: 10px;
-  color: #464141;
-}
-
-.notification p {
-  text-align: center;
-  font-weight: bolder;
-  font-size: 13px;
-}
-
-#nav-icons {
-  color: black !important;
-  font-size: 22px;
-}
-
-@media (min-width: 992px) {
-  .navbar-expand-lg .navbar-nav .nav-link {
-    padding-left: 6px !important;
-    padding-top: 0px !important;
-  }
-  .navbar-brand {
-    color: white !important;
-    font-size: 30px !important;
-    margin-left: 30px !important;
-    margin-right: 1011px !important;
-  }
-}
-
-.dropdown-settings .dropdown-menu {
-  position: absolute;
-  top: 100%;
-  left: -34px;
-  z-index: 1000;
-  display: none;
-  float: left;
-  min-width: 10rem;
-  padding: 0.5rem 0;
-  margin: 0.125rem 0 0;
-  font-size: 1rem;
-  color: black;
-  text-align: left;
-  list-style: none;
-  background-clip: padding-box;
-  border: 1px solid rgba(0, 0, 0, 0.15);
-  border-radius: 0.25rem;
-  outline: none !important;
-}
-
-.nav-link {
-  color: white;
-  font-size: 17px;
-  text-align: center;
-}
-
-.dropdown-item {
-  height: 40px;
-  font-size: 17px;
-  text-align: center !important;
-  padding-top: 9px !important;
-}
-
-.dropdown-item.active {
+.signup-pill:hover {
+  background: #166534;
   color: white !important;
 }
 
-.dropdown-item a:hover {
-  color: black !important;
+.dropdown-menu {
+  border: none;
+  border-radius: 16px;
+  padding: 10px;
+  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.15);
 }
 
-.notify-amount p {
-  margin-top: -2px !important;
+.dropdown-item {
+  border-radius: 10px;
+  padding: 10px 14px !important;
+  font-size: 15px;
 }
 
-.navbar-brand {
-  color: white!important;
-  font-size: 30px !important;
-  margin-left: 30px !important;
-  margin-right: 935px !important;
-  font-family: 'Dela Gothic One', cursive;
+.dropdown-item:hover {
+  background: #edf7ee;
+  color: #1f7a3f;
 }
 
-nav a {
-  color: white;
+@media (max-width: 991px) {
+  .custom-navbar {
+    padding: 12px 18px;
+  }
+
+  .nav-left {
+    margin-left: 0;
+  }
+
+  .custom-navbar .nav-link,
+  .custom-navbar .dropdown-toggle {
+    margin-left: 0;
+    padding: 12px 0;
+  }
+
+  .nav-right {
+    margin-left: 0;
+  }
 }
 
-nav a:hover {
-  color: rgb(182, 174, 174);
-  outline: none;
-  text-decoration: none;
-}
-
-.mr-auto a {
-  color: black;
-}
-
-.mr-auto a:hover {
-  outline: none;
-  text-decoration: none;
+.active-nav {
+  background: #e8f5e9;
+  color: #1f7a3f !important;
+  border-radius: 12px;
+  padding: 8px 16px !important;
 }

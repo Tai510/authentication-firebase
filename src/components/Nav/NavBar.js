@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useAuth } from "../../contexts/AuthContext";
-import { useHistory, Link } from "react-router-dom";
+import { useHistory, Link, NavLink } from "react-router-dom";
 import { Navbar, Nav, NavDropdown } from "react-bootstrap";
 import "./NavBar.css";
 
@@ -21,51 +21,65 @@ const NavBar = () => {
   }
 
   return (
-    <nav>
-      <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-        <Navbar.Brand as={Link} to="/">
-          MyDashBoard
-        </Navbar.Brand>
+    <Navbar expand="lg" className="custom-navbar">
+      <Navbar.Brand as={Link} to="/" className="nav-brand">
+        <span className="brand-icon">🌿</span>
+        <span>Sonoma</span>
+      </Navbar.Brand>
 
-        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+      <Navbar.Toggle aria-controls="main-navbar" />
 
-        <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav className="mr-auto">
-            {currentUser ? (
-              <NavDropdown title="Settings & Apps" id="collasible-nav-dropdown">
+      <Navbar.Collapse id="main-navbar">
+        {currentUser ? (
+          <>
+            <Nav className="nav-left">
+              <Nav.Link as={NavLink} exact to="/" activeClassName="active-nav">
+                Dashboard
+              </Nav.Link>
+
+              <NavDropdown title="Apps" id="apps-dropdown">
                 <NavDropdown.Item as={Link} to="/">
-                  Dashboard
+                  🌤️ Weather
                 </NavDropdown.Item>
-
-                <NavDropdown.Item as={Link} to="/update-profile">
-                  Update Profile
-                </NavDropdown.Item>
-
                 <NavDropdown.Item as={Link} to="/todos">
-                  My Todo
+                  ✅ Todo
                 </NavDropdown.Item>
-
-                <NavDropdown.Divider />
-
-                <NavDropdown.Item onClick={handleLogout}>
-                  Logout
+                <NavDropdown.Item as={Link} to="/">
+                  📅 Calendar
+                </NavDropdown.Item>
+                <NavDropdown.Item as={Link} to="/">
+                  📰 News
+                </NavDropdown.Item>
+                <NavDropdown.Item as={Link} to="/">
+                  💬 Quotes
                 </NavDropdown.Item>
               </NavDropdown>
-            ) : (
-              <>
-                <Nav.Link as={Link} to="/login">
-                  Login
-                </Nav.Link>
+            </Nav>
 
-                <Nav.Link as={Link} to="/signup">
-                  Sign Up
-                </Nav.Link>
-              </>
-            )}
+            <Nav className="ml-auto nav-right">
+              <NavDropdown title="👤 Tai" id="account-dropdown" alignRight>
+                <NavDropdown.Item as={Link} to="/update-profile">
+                  👤 Update Profile
+                </NavDropdown.Item>
+                <NavDropdown.Divider />
+                <NavDropdown.Item onClick={handleLogout}>
+                  🚪 Log Out
+                </NavDropdown.Item>
+              </NavDropdown>
+            </Nav>
+          </>
+        ) : (
+          <Nav className="ml-auto nav-right">
+            <Nav.Link as={Link} to="/login">
+              Login
+            </Nav.Link>
+            <Nav.Link as={Link} to="/signup" className="signup-pill">
+              Sign Up
+            </Nav.Link>
           </Nav>
-        </Navbar.Collapse>
-      </Navbar>
-    </nav>
+        )}
+      </Navbar.Collapse>
+    </Navbar>
   );
 };
 
