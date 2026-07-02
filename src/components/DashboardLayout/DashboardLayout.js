@@ -68,8 +68,8 @@ function DashboardLayout() {
           </div>
         </header>
 
-        <main className="dashboard-grid">
-          <section className="dashboard-card large-card">
+        <main className="desk-room">
+          <section className="dashboard-card weather-zone large-card">
             <div className="widget-header">
               <span>🌤️</span>
               <h2>Weather</h2>
@@ -77,7 +77,7 @@ function DashboardLayout() {
             <Weather />
           </section>
 
-          <section className="dashboard-card">
+          <section className="dashboard-card calendar-zone">
             <div className="widget-header">
               <span>📅</span>
               <h2>Calendar</h2>
@@ -85,7 +85,7 @@ function DashboardLayout() {
             <MyCalendar />
           </section>
 
-          <section className="dashboard-card">
+          <section className="dashboard-card task-zone">
             <div className="widget-header">
               <span>✅</span>
               <h2>Tasks</h2>

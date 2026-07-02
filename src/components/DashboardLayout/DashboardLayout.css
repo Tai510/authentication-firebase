@@ -94,10 +94,34 @@
   margin-top: 4px;
 }
 
-.dashboard-grid {
+.desk-room {
   display: grid;
-  grid-template-columns: 2fr 1fr;
-  gap: 20px;
+  grid-template-columns: 1.2fr 1fr;
+  grid-template-areas:
+    "weather calendar"
+    "tasks news"
+    "quote quote";
+  gap: 22px;
+}
+
+.weather-zone {
+  grid-area: weather;
+}
+
+.calendar-zone {
+  grid-area: calendar;
+}
+
+.task-zone {
+  grid-area: tasks;
+}
+
+.news-zone {
+  grid-area: news;
+}
+
+.quote-zone {
+  grid-area: quote;
 }
 
 .dashboard-card {
@@ -129,13 +153,15 @@
     gap: 15px;
   }
 
-  .dashboard-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .wide-card {
-    grid-column: span 1;
-  }
+  .desk-room {
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "weather"
+    "calendar"
+    "tasks"
+    "news"
+    "quote";
+}
 
   .welcome-intro h1,
   .weather-temp {
