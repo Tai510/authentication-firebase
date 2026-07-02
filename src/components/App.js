@@ -10,23 +10,24 @@ import ForgotPassword from "./ForgotPassword";
 import UpdateProfile from "./UpdateProfile";
 import Todo from "../components/Todo/Todo";
 import NavBar from "../components/Nav/NavBar";
+import DashboardLayout from "./DashboardLayout/DashboardLayout";
 
 function App() {
   return (
     <Container>
-        <Router>
-          <AuthProvider>
-            <NavBar />
-            <Switch>
-              <PrivateRoute exact path="/" component={Dashboard} />
-              <PrivateRoute path="/update-profile" component={UpdateProfile} />
-              <PrivateRoute path="/todos" component={Todo} />
-              <Route path="/signup" component={Signup} />
-              <Route path="/login" component={Login} />
-              <Route path="/forgot-password" component={ForgotPassword} />
-            </Switch>
-          </AuthProvider>
-        </Router>
+      <Router>
+        <AuthProvider>
+          <NavBar />
+          <Switch>
+            <PrivateRoute exact path="/" component={DashboardLayout} />
+            <PrivateRoute path="/update-profile" component={UpdateProfile} />
+            <PrivateRoute path="/todos" component={Todo} />
+            <Route path="/signup" component={Signup} />
+            <Route path="/login" component={Login} />
+            <Route path="/forgot-password" component={ForgotPassword} />
+          </Switch>
+        </AuthProvider>
+      </Router>
     </Container>
   );
 }

@@ -1,0 +1,141 @@
+.dashboard-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #d7f0d0, #f7f1d5);
+  padding: 30px;
+}
+
+.dashboard-shell {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 40px;
+}
+
+.dashboard-hero {
+  position: relative;
+  min-height: 360px;
+  width: 100%;
+  overflow: hidden;
+}
+
+.welcome-intro,
+.weather-intro {
+  position: absolute;
+  left: 0;
+  top: 0;
+  transition: opacity 2s ease, transform 2s ease;
+  will-change: opacity, transform;
+}
+
+.welcome-intro.show {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.welcome-intro.hide {
+  opacity: 0;
+  transform: translateY(-120px) scale(0.9);
+  pointer-events: none;
+}
+
+.weather-intro.show {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  transition-delay: 0.35s;
+}
+
+.weather-intro.hide {
+  opacity: 0;
+  transform: translateY(140px) scale(0.9);
+  pointer-events: none;
+}
+
+.welcome-intro p,
+.weather-condition,
+.weather-location,
+.weather-time {
+  margin: 0;
+}
+
+.welcome-intro h1 {
+  margin: 5px 0 0;
+  font-size: 56px;
+}
+
+.weather-main {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.weather-icon {
+  font-size: 48px;
+}
+
+.weather-temp {
+  font-size: 64px;
+  font-weight: 700;
+}
+
+.weather-condition {
+  font-size: 24px;
+  margin-top: 8px;
+}
+
+.weather-location,
+.weather-time {
+  font-size: 18px;
+  color: #4b5563;
+  margin-top: 4px;
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 20px;
+}
+
+.dashboard-card {
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 18px;
+  padding: 20px;
+  min-height: 180px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+.large-card {
+  min-height: 280px;
+}
+
+.wide-card {
+  grid-column: span 2;
+}
+
+@media (max-width: 800px) {
+  .dashboard-header {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .wide-card {
+    grid-column: span 1;
+  }
+
+  .welcome-intro h1,
+  .weather-temp {
+    font-size: 42px;
+  }
+
+  .corner-name {
+    font-size: 30px;
+  }
+}

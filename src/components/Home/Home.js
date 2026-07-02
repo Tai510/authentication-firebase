@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import MyCalendar from "../Calendar/Calendar";
-import "./Home.css";
+import "./HomeV2.css";
 import Clock from "../Clock/Clock";
 import { IoIosRestaurant } from "react-icons/io";
 import { FaAmazon } from "react-icons/fa";
@@ -15,42 +15,51 @@ const Home = ({ email }) => {
   const [notify, setNotify] = useState(0);
 
   const updateGreeting = () => {
-  const hour = new Date().getHours();
+    const hour = new Date().getHours();
 
-  if (hour >= 18) {
-    setGreeting("Good Evening ! 😄");
-  } else if (hour >= 12) {
-    setGreeting("Good Afternoon ! 😄");
-  } else {
-    setGreeting("Good Morning ! 😄");
-  }
-};
+    if (hour >= 18) {
+      setGreeting("Good Evening ! 😄");
+    } else if (hour >= 12) {
+      setGreeting("Good Afternoon ! 😄");
+    } else {
+      setGreeting("Good Morning ! 😄");
+    }
+  };
 
   useEffect(() => {
-  updateGreeting();
-
-  const greetingInterval = setInterval(() => {
     updateGreeting();
-  }, 60000);
 
-  const unsubscribe = db
-    .collection(auth.currentUser.uid)
-    .orderBy("timestamp", "asc")
-    .onSnapshot((snapshot) => {
-      setNotify(snapshot.docs.length);
-    });
+    const greetingInterval = setInterval(() => {
+      updateGreeting();
+    }, 60000);
 
-  return () => {
-    clearInterval(greetingInterval);
-    unsubscribe();
-  };
-}, []);
+    const unsubscribe = db
+      .collection(auth.currentUser.uid)
+      .orderBy("timestamp", "asc")
+      .onSnapshot((snapshot) => {
+        setNotify(snapshot.docs.length);
+      });
+
+    return () => {
+      clearInterval(greetingInterval);
+      unsubscribe();
+    };
+  }, []);
 
   return (
-    <div className="Home">
+  <div className="Home">
+    <header className="dashboard-header">
+      <div>
+        <h1>{greeting}</h1>
+        <p>Welcome back to your Sonoma dashboard</p>
+      </div>
+
+      <div className="dashboard-time">
+        <Clock />
+      </div>
+    </header>
       <div className="left-section-home">
         <MyCalendar greeting={greeting} />
-        <Clock />
         <Card notify={notify} />
       </div>
 

@@ -1,23 +1,34 @@
-#Register-Forms{
-    flex: 1 1 auto;
-    min-height: 1px;
-    padding: 1.25rem;
-    width: 600px;
-    margin: auto;
-    margin-top: 100px;
+#Register-Forms {
+  flex: 1 1 auto;
+  min-height: 1px;
+  padding: 1.25rem;
+  width: 600px;
+  margin: auto;
+  margin-top: 100px;
 }
 
-@media only screen 
-and (min-device-width : 320px) 
-and (max-device-width : 568px) { 
-    #Register-Forms{
-        width: 100% !important;
-    }
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) {
+  #Register-Forms {
+    width: 100% !important;
+  }
 }
 
+.password-rules {
+  margin: 10px 0;
+  font-size: 14px;
+}
 
+.password-rules p {
+  margin: 4px 0;
+}
 
+.valid-rule {
+  color: green;
+}
 
+.invalid-rule {
+  color: #777;
+}
 
 /* .display-Nav {
     display: none !important;
